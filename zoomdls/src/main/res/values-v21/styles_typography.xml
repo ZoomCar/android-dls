@@ -1,0 +1,260 @@
+<resources>
+    <style name="ZoomTextAppearance" parent="android:TextAppearance.Material" />
+
+    <style name="DisplayInverse" parent="DisplayInverse.Parent">
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="DisplayInactive" parent="DisplayInactive.Parent">
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="DisplaySecondary" parent="DisplaySecondary.Parent">
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="DisplayPrimary" parent="DisplayPrimary.Parent">
+        <item name="android:letterSpacing">-0.01</item>
+    </style>
+
+    <style name="SubheadTintedSunriseYellow" parent="SubheadTintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadTintedFireRed" parent="SubheadTintedFireRed.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadTintedMidnightBlue" parent="SubheadTintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadTintedEvergreen" parent="SubheadTintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadInverse" parent="SubheadInverse.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadInactive" parent="SubheadInactive.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadSecondary" parent="SubheadSecondary.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="SubheadPrimary" parent="SubheadPrimary.Parent">
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="Title1TintedSunriseYellow" parent="Title1TintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1TintedFireRed" parent="Title1TintedFireRed.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1TintedMidnightBlue" parent="Title1TintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1TintedEvergreen" parent="Title1TintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1Inverse" parent="Title1Inverse.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1Inactive" parent="Title1Inactive.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1Secondary" parent="Title1Secondary.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Title1Primary" parent="Title1Primary.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1TintedSunriseYellow" parent="Body1TintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1TintedFireRed" parent="Body1TintedFireRed.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1TintedMidnightBlue" parent="Body1TintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1TintedEvergreen" parent="Body1TintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1Inverse" parent="Body1Inverse.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1Inactive" parent="Body1Inactive.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1Secondary" parent="Body1Secondary.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body1Primary" parent="Body1Primary.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Button1Inverse" parent="Button1Inverse.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Button1Inactive" parent="Button1Inactive.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Button1Secondary" parent="Button1Secondary.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Button1Primary" parent="Button1Primary.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Title2TintedSunriseYellow" parent="Title2TintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2TintedFireRed" parent="Title2TintedFireRed.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2TintedMidnightBlue" parent="Title2TintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2TintedEvergreen" parent="Title2TintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2Inverse" parent="Title2Inverse.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2Inactive" parent="Title2Inactive.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2Secondary" parent="Title2Secondary.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Title2Primary" parent="Title2Primary.Parent">
+        <item name="android:letterSpacing">0.09</item>
+    </style>
+
+    <style name="Body2TintedSunriseYellow" parent="Body2TintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2TintedFireRed" parent="Body2TintedFireRed.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2TintedMidnightBlue" parent="Body2TintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2TintedEvergreen" parent="Body2TintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2Inverse" parent="Body2Inverse.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2Inactive" parent="Body2Inactive.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2Secondary" parent="Body2Secondary.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Body2Primary" parent="Body2Primary.Parent">
+        <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="OverlineTintedSunriseYellow" parent="OverlineTintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlineTintedFireRed" parent="OverlineTintedFireRed.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlineTintedMidnightBlue" parent="OverlineTintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlineTintedEvergreen" parent="OverlineTintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlineInverse" parent="OverlineInverse.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlineInactive" parent="OverlineInactive.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlineSecondary" parent="OverlineSecondary.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="OverlinePrimary" parent="OverlinePrimary.Parent">
+        <item name="android:letterSpacing">0.17</item>
+    </style>
+
+    <style name="CaptionTintedSunriseYellow" parent="CaptionTintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionTintedFireRed" parent="CaptionTintedFireRed.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionTintedMidnightBlue" parent="CaptionTintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionTintedEvergreen" parent="CaptionTintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionInverse" parent="CaptionInverse.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionInactive" parent="CaptionInactive.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionSecondary" parent="CaptionSecondary.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+    <style name="CaptionPrimary" parent="CaptionPrimary.Parent">
+        <item name="android:letterSpacing">0.03</item>
+    </style>
+
+</resources>
