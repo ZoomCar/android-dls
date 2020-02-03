@@ -10,7 +10,7 @@ Follow [DLS](https://zoomuxd.gitbook.io)
 
 ### Getting started
 
-#### Using ZC-Network-Client in your application
+#### Using android-dls in your application
 * Add the JitPack repository to your project level build file.
 ```
 allprojects {
