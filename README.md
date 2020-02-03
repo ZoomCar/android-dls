@@ -8,6 +8,23 @@ This repository would be used as a central design language for all the Zoomcar a
 ## Design Guidelines
 Follow [DLS](https://zoomuxd.gitbook.io)
 
+### Getting started
+
+#### Using ZC-Network-Client in your application
+* Add the JitPack repository to your project level build file.
+```
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+* Add the library dependency
+```
+implementation 'com.github.ZoomCar:android-dls:1.0.0'
+```
+
 ### Find this project useful ? :heart:
 
 * Support it by clicking the :star: button on the upper right of this page. :v:
