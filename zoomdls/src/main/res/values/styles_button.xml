@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="GreenAccent">
+        <item name="colorPrimary">@color/ever_green_06</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSurface">@color/ever_green_06</item>
+    </style>
+
+</resources>

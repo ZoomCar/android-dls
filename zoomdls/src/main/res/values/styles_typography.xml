@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ZoomTextAppearance" parent="android:TextAppearance" />
+
+    <style name="DisplayInverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">48sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="DisplayInactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">48sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="DisplaySecondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">48sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="DisplayPrimary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">48sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="H1Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">42sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="H1Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">42sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="H1Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">42sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="H1Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">42sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="H2Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="H2Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="H2Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="H2Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">36sp</item>
+        <item name="android:lineSpacingExtra">12sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="H3Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="H3Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="H3Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="H3Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">32sp</item>
+        <item name="android:lineSpacingExtra">10sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="H4Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="H4Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="H4Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="H4Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="H5Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="H5Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="H5Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="H5Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="H6Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="H6Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="H6Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="H6Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="SubheadTintedSunriseYellow.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="SubheadTintedFireRed.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="SubheadTintedMidnightBlue.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="SubheadTintedEvergreen.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
+    <style name="SubheadInverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SubheadInactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="SubheadSecondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="SubheadPrimary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Title1TintedSunriseYellow.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="Title1TintedFireRed.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="Title1TintedMidnightBlue.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="Title1TintedEvergreen.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
+    <style name="Title1Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title1Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="Title1Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="Title1Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Body1TintedSunriseYellow.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="Body1TintedFireRed.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="Body1TintedMidnightBlue.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="Body1TintedEvergreen.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
+    <style name="Body1Inverse.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Body1Inactive.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="Body1Secondary.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="Body1Primary.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">8sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Button1Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button1Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="Button1Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="Button1Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Title2TintedSunriseYellow.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_04</item>
+    </style>
+
+    <style name="Title2TintedFireRed.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/fire_red_04</item>
+    </style>
+
+    <style name="Title2TintedMidnightBlue.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/midnight_blue_04</item>
+    </style>
+
+    <style name="Title2TintedEvergreen.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/ever_green_04</item>
+    </style>
+
+    <style name="Title2Inverse.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Title2Inactive.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="Title2Secondary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="Title2Primary.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Button2Inverse.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Button2Inactive.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="Button2Secondary.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="Button2Primary.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Body2TintedSunriseYellow.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="Body2TintedFireRed.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="Body2TintedMidnightBlue.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="Body2TintedEvergreen.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
+    <style name="Body2Inverse.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Body2Inactive.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="Body2Secondary.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="Body2Primary.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="OverlineTintedSunriseYellow.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="OverlineTintedFireRed.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="OverlineTintedMidnightBlue.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="OverlineTintedEvergreen.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
+    <style name="OverlineInverse.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="OverlineInactive.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="OverlineSecondary.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="OverlinePrimary.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="CaptionTintedSunriseYellow.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="CaptionTintedFireRed.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="CaptionTintedMidnightBlue.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="CaptionTintedEvergreen.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
+    <style name="CaptionInverse.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CaptionInactive.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/phantom_grey_04</item>
+    </style>
+
+    <style name="CaptionSecondary.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/phantom_grey_06</item>
+    </style>
+
+    <style name="CaptionPrimary.Parent" parent="IbmPlexRegular">
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="DisplayInverse" parent="DisplayInverse.Parent" />
+    <style name="DisplayInactive" parent="DisplayInactive.Parent" />
+    <style name="DisplaySecondary" parent="DisplaySecondary.Parent" />
+    <style name="DisplayPrimary" parent="DisplayPrimary.Parent" />
+    <style name="H1Inverse" parent="H1Inverse.Parent" />
+    <style name="H1Inactive" parent="H1Inactive.Parent" />
+    <style name="H1Secondary" parent="H1Secondary.Parent" />
+    <style name="H1Primary" parent="H1Primary.Parent" />
+    <style name="H2Inverse" parent="H2Inverse.Parent" />
+    <style name="H2Inactive" parent="H2Inactive.Parent" />
+    <style name="H2Secondary" parent="H2Secondary.Parent" />
+    <style name="H2Primary" parent="H2Primary.Parent" />
+    <style name="H3Inverse" parent="H3Inverse.Parent" />
+    <style name="H3Inactive" parent="H3Inactive.Parent" />
+    <style name="H3Secondary" parent="H3Secondary.Parent" />
+    <style name="H3Primary" parent="H3Primary.Parent" />
+    <style name="H4Inverse" parent="H4Inverse.Parent" />
+    <style name="H4Inactive" parent="H4Inactive.Parent" />
+    <style name="H4Secondary" parent="H4Secondary.Parent" />
+    <style name="H4Primary" parent="H4Primary.Parent" />
+    <style name="H5Inverse" parent="H5Inverse.Parent" />
+    <style name="H5Inactive" parent="H5Inactive.Parent" />
+    <style name="H5Secondary" parent="H5Secondary.Parent" />
+    <style name="H5Primary" parent="H5Primary.Parent" />
+    <style name="H6Inverse" parent="H6Inverse.Parent" />
+    <style name="H6Inactive" parent="H6Inactive.Parent" />
+    <style name="H6Secondary" parent="H6Secondary.Parent" />
+    <style name="H6Primary" parent="H6Primary.Parent" />
+    <style name="SubheadTintedSunriseYellow" parent="SubheadTintedSunriseYellow.Parent" />
+    <style name="SubheadTintedFireRed" parent="SubheadTintedFireRed.Parent" />
+    <style name="SubheadTintedMidnightBlue" parent="SubheadTintedMidnightBlue.Parent" />
+    <style name="SubheadTintedEvergreen" parent="SubheadTintedEvergreen.Parent" />
+    <style name="SubheadInverse" parent="SubheadInverse.Parent" />
+    <style name="SubheadInactive" parent="SubheadInactive.Parent" />
+    <style name="SubheadSecondary" parent="SubheadSecondary.Parent" />
+    <style name="SubheadPrimary" parent="SubheadPrimary.Parent" />
+    <style name="Title1TintedSunriseYellow" parent="Title1TintedSunriseYellow.Parent" />
+    <style name="Title1TintedFireRed" parent="Title1TintedFireRed.Parent" />
+    <style name="Title1TintedMidnightBlue" parent="Title1TintedMidnightBlue.Parent" />
+    <style name="Title1TintedEvergreen" parent="Title1TintedEvergreen.Parent" />
+    <style name="Title1Inverse" parent="Title1Inverse.Parent" />
+    <style name="Title1Inactive" parent="Title1Inactive.Parent" />
+    <style name="Title1Secondary" parent="Title1Secondary.Parent" />
+    <style name="Title1Primary" parent="Title1Primary.Parent" />
+    <style name="Body1TintedSunriseYellow" parent="Body1TintedSunriseYellow.Parent" />
+    <style name="Body1TintedFireRed" parent="Body1TintedFireRed.Parent" />
+    <style name="Body1TintedMidnightBlue" parent="Body1TintedMidnightBlue.Parent" />
+    <style name="Body1TintedEvergreen" parent="Body1TintedEvergreen.Parent" />
+    <style name="Body1Inverse" parent="Body1Inverse.Parent" />
+    <style name="Body1Inactive" parent="Body1Inactive.Parent" />
+    <style name="Body1Secondary" parent="Body1Secondary.Parent" />
+    <style name="Body1Primary" parent="Body1Primary.Parent" />
+    <style name="Button1Inverse" parent="Button1Inverse.Parent" />
+    <style name="Button1Inactive" parent="Button1Inactive.Parent" />
+    <style name="Button1Secondary" parent="Button1Secondary.Parent" />
+    <style name="Button1Primary" parent="Button1Primary.Parent" />
+    <style name="Title2TintedSunriseYellow" parent="Title2TintedSunriseYellow.Parent" />
+    <style name="Title2TintedFireRed" parent="Title2TintedFireRed.Parent" />
+    <style name="Title2TintedMidnightBlue" parent="Title2TintedMidnightBlue.Parent" />
+    <style name="Title2TintedEvergreen" parent="Title2TintedEvergreen.Parent" />
+    <style name="Title2Inverse" parent="Title2Inverse.Parent" />
+    <style name="Title2Inactive" parent="Title2Inactive.Parent" />
+    <style name="Title2Secondary" parent="Title2Secondary.Parent" />
+    <style name="Title2Primary" parent="Title2Primary.Parent" />
+    <style name="Button2Inverse" parent="Button2Inverse.Parent" />
+    <style name="Button2Inactive" parent="Button2Inactive.Parent" />
+    <style name="Button2Secondary" parent="Button2Secondary.Parent" />
+    <style name="Button2Primary" parent="Button2Primary.Parent" />
+    <style name="Body2TintedSunriseYellow" parent="Body2TintedSunriseYellow.Parent" />
+    <style name="Body2TintedFireRed" parent="Body2TintedFireRed.Parent" />
+    <style name="Body2TintedMidnightBlue" parent="Body2TintedMidnightBlue.Parent" />
+    <style name="Body2TintedEvergreen" parent="Body2TintedEvergreen.Parent" />
+    <style name="Body2Inverse" parent="Body2Inverse.Parent" />
+    <style name="Body2Inactive" parent="Body2Inactive.Parent" />
+    <style name="Body2Secondary" parent="Body2Secondary.Parent" />
+    <style name="Body2Primary" parent="Body2Primary.Parent" />
+    <style name="OverlineTintedSunriseYellow" parent="OverlineTintedSunriseYellow.Parent" />
+    <style name="OverlineTintedFireRed" parent="OverlineTintedFireRed.Parent" />
+    <style name="OverlineTintedMidnightBlue" parent="OverlineTintedMidnightBlue.Parent" />
+    <style name="OverlineTintedEvergreen" parent="OverlineTintedEvergreen.Parent" />
+    <style name="OverlineInverse" parent="OverlineInverse.Parent" />
+    <style name="OverlineInactive" parent="OverlineInactive.Parent" />
+    <style name="OverlineSecondary" parent="OverlineSecondary.Parent" />
+    <style name="OverlinePrimary" parent="OverlinePrimary.Parent" />
+    <style name="CaptionTintedSunriseYellow" parent="CaptionTintedSunriseYellow.Parent" />
+    <style name="CaptionTintedFireRed" parent="CaptionTintedFireRed.Parent" />
+    <style name="CaptionTintedMidnightBlue" parent="CaptionTintedMidnightBlue.Parent" />
+    <style name="CaptionTintedEvergreen" parent="CaptionTintedEvergreen.Parent" />
+    <style name="CaptionInverse" parent="CaptionInverse.Parent" />
+    <style name="CaptionInactive" parent="CaptionInactive.Parent" />
+    <style name="CaptionSecondary" parent="CaptionSecondary.Parent" />
+    <style name="CaptionPrimary" parent="CaptionPrimary.Parent" />
+
+</resources>

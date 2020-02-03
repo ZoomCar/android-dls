@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--All font styles here-->
+
+    <style name="IbmPlexMedium" parent="ZoomTextAppearance">
+        <item name="android:fontFamily">@font/ibm_plex_medium</item>
+    </style>
+
+    <style name="IbmPlexSemiBold" parent="ZoomTextAppearance">
+        <item name="android:fontFamily">@font/ibm_plex_semi_bold</item>
+    </style>
+
+    <style name="IbmPlexRegular" parent="ZoomTextAppearance">
+        <item name="android:fontFamily">@font/ibm_plex_regular</item>
+    </style>
+
+</resources>
