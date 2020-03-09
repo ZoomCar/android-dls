@@ -1,4 +1,5 @@
 <resources>
+
     <style name="ZoomTextAppearance" parent="android:TextAppearance.Material" />
 
     <style name="DisplayInverse" parent="DisplayInverse.Parent">
@@ -16,7 +17,6 @@
     <style name="DisplayPrimary" parent="DisplayPrimary.Parent">
         <item name="android:letterSpacing">-0.01</item>
     </style>
-
     <style name="SubheadTintedSunriseYellow" parent="SubheadTintedSunriseYellow.Parent">
         <item name="android:letterSpacing">0.01</item>
     </style>
@@ -111,6 +111,22 @@
 
     <style name="Body1Primary" parent="Body1Primary.Parent">
         <item name="android:letterSpacing">0.02</item>
+    </style>
+
+    <style name="Button1TintedSunriseYellow" parent="Button1TintedSunriseYellow.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Button1TintedFireRed" parent="Button1TintedFireRed.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Button1TintedMidnightBlue" parent="Button1TintedMidnightBlue.Parent">
+        <item name="android:letterSpacing">0.06</item>
+    </style>
+
+    <style name="Button1TintedEvergreen" parent="Button1TintedEvergreen.Parent">
+        <item name="android:letterSpacing">0.06</item>
     </style>
 
     <style name="Button1Inverse" parent="Button1Inverse.Parent">

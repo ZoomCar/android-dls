@@ -315,6 +315,30 @@
         <item name="android:textColor">@color/phantom_grey_10</item>
     </style>
 
+    <style name="Button1TintedSunriseYellow.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="Button1TintedFireRed.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="Button1TintedMidnightBlue.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="Button1TintedEvergreen.Parent" parent="IbmPlexSemiBold">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
+    </style>
+
     <style name="Button1Inverse.Parent" parent="IbmPlexSemiBold">
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">2sp</item>
@@ -385,6 +409,30 @@
         <item name="android:textSize">14sp</item>
         <item name="android:lineSpacingExtra">6sp</item>
         <item name="android:textColor">@color/phantom_grey_10</item>
+    </style>
+
+    <style name="Button2TintedSunriseYellow.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/sunrise_yellow_06</item>
+    </style>
+
+    <style name="Button2TintedFireRed.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/fire_red_06</item>
+    </style>
+
+    <style name="Button2TintedMidnightBlue.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/midnight_blue_06</item>
+    </style>
+
+    <style name="Button2TintedEvergreen.Parent" parent="IbmPlexMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:textColor">@color/ever_green_06</item>
     </style>
 
     <style name="Button2Inverse.Parent" parent="IbmPlexMedium">
@@ -556,96 +604,204 @@
     </style>
 
     <style name="DisplayInverse" parent="DisplayInverse.Parent" />
+
     <style name="DisplayInactive" parent="DisplayInactive.Parent" />
+
     <style name="DisplaySecondary" parent="DisplaySecondary.Parent" />
+
     <style name="DisplayPrimary" parent="DisplayPrimary.Parent" />
+
     <style name="H1Inverse" parent="H1Inverse.Parent" />
+
     <style name="H1Inactive" parent="H1Inactive.Parent" />
+
     <style name="H1Secondary" parent="H1Secondary.Parent" />
+
     <style name="H1Primary" parent="H1Primary.Parent" />
+
     <style name="H2Inverse" parent="H2Inverse.Parent" />
+
     <style name="H2Inactive" parent="H2Inactive.Parent" />
+
     <style name="H2Secondary" parent="H2Secondary.Parent" />
+
     <style name="H2Primary" parent="H2Primary.Parent" />
+
     <style name="H3Inverse" parent="H3Inverse.Parent" />
+
     <style name="H3Inactive" parent="H3Inactive.Parent" />
+
     <style name="H3Secondary" parent="H3Secondary.Parent" />
+
     <style name="H3Primary" parent="H3Primary.Parent" />
+
     <style name="H4Inverse" parent="H4Inverse.Parent" />
+
     <style name="H4Inactive" parent="H4Inactive.Parent" />
+
     <style name="H4Secondary" parent="H4Secondary.Parent" />
+
     <style name="H4Primary" parent="H4Primary.Parent" />
+
     <style name="H5Inverse" parent="H5Inverse.Parent" />
+
     <style name="H5Inactive" parent="H5Inactive.Parent" />
+
     <style name="H5Secondary" parent="H5Secondary.Parent" />
+
     <style name="H5Primary" parent="H5Primary.Parent" />
+
     <style name="H6Inverse" parent="H6Inverse.Parent" />
+
     <style name="H6Inactive" parent="H6Inactive.Parent" />
+
     <style name="H6Secondary" parent="H6Secondary.Parent" />
+
     <style name="H6Primary" parent="H6Primary.Parent" />
+
     <style name="SubheadTintedSunriseYellow" parent="SubheadTintedSunriseYellow.Parent" />
+
     <style name="SubheadTintedFireRed" parent="SubheadTintedFireRed.Parent" />
+
     <style name="SubheadTintedMidnightBlue" parent="SubheadTintedMidnightBlue.Parent" />
+
     <style name="SubheadTintedEvergreen" parent="SubheadTintedEvergreen.Parent" />
+
     <style name="SubheadInverse" parent="SubheadInverse.Parent" />
+
     <style name="SubheadInactive" parent="SubheadInactive.Parent" />
+
     <style name="SubheadSecondary" parent="SubheadSecondary.Parent" />
+
     <style name="SubheadPrimary" parent="SubheadPrimary.Parent" />
+
     <style name="Title1TintedSunriseYellow" parent="Title1TintedSunriseYellow.Parent" />
+
     <style name="Title1TintedFireRed" parent="Title1TintedFireRed.Parent" />
+
     <style name="Title1TintedMidnightBlue" parent="Title1TintedMidnightBlue.Parent" />
+
     <style name="Title1TintedEvergreen" parent="Title1TintedEvergreen.Parent" />
+
     <style name="Title1Inverse" parent="Title1Inverse.Parent" />
+
     <style name="Title1Inactive" parent="Title1Inactive.Parent" />
+
     <style name="Title1Secondary" parent="Title1Secondary.Parent" />
+
     <style name="Title1Primary" parent="Title1Primary.Parent" />
+
     <style name="Body1TintedSunriseYellow" parent="Body1TintedSunriseYellow.Parent" />
+
     <style name="Body1TintedFireRed" parent="Body1TintedFireRed.Parent" />
+
     <style name="Body1TintedMidnightBlue" parent="Body1TintedMidnightBlue.Parent" />
+
     <style name="Body1TintedEvergreen" parent="Body1TintedEvergreen.Parent" />
+
     <style name="Body1Inverse" parent="Body1Inverse.Parent" />
+
     <style name="Body1Inactive" parent="Body1Inactive.Parent" />
+
     <style name="Body1Secondary" parent="Body1Secondary.Parent" />
+
     <style name="Body1Primary" parent="Body1Primary.Parent" />
+
+    <style name="Button1TintedSunriseYellow" parent="Button1TintedSunriseYellow.Parent" />
+
+    <style name="Button1TintedFireRed" parent="Button1TintedFireRed.Parent" />
+
+    <style name="Button1TintedMidnightBlue" parent="Button1TintedMidnightBlue.Parent" />
+
+    <style name="Button1TintedEvergreen" parent="Button1TintedEvergreen.Parent" />
+
     <style name="Button1Inverse" parent="Button1Inverse.Parent" />
+
     <style name="Button1Inactive" parent="Button1Inactive.Parent" />
+
     <style name="Button1Secondary" parent="Button1Secondary.Parent" />
+
     <style name="Button1Primary" parent="Button1Primary.Parent" />
+
     <style name="Title2TintedSunriseYellow" parent="Title2TintedSunriseYellow.Parent" />
+
     <style name="Title2TintedFireRed" parent="Title2TintedFireRed.Parent" />
+
     <style name="Title2TintedMidnightBlue" parent="Title2TintedMidnightBlue.Parent" />
+
     <style name="Title2TintedEvergreen" parent="Title2TintedEvergreen.Parent" />
+
     <style name="Title2Inverse" parent="Title2Inverse.Parent" />
+
     <style name="Title2Inactive" parent="Title2Inactive.Parent" />
+
     <style name="Title2Secondary" parent="Title2Secondary.Parent" />
+
     <style name="Title2Primary" parent="Title2Primary.Parent" />
+
+    <style name="Button2TintedSunriseYellow" parent="Button2TintedSunriseYellow.Parent" />
+
+    <style name="Button2TintedFireRed" parent="Button2TintedFireRed.Parent" />
+
+    <style name="Button2TintedMidnightBlue" parent="Button2TintedMidnightBlue.Parent" />
+
+    <style name="Button2TintedEvergreen" parent="Button2TintedEvergreen.Parent" />
+
     <style name="Button2Inverse" parent="Button2Inverse.Parent" />
+
     <style name="Button2Inactive" parent="Button2Inactive.Parent" />
+
     <style name="Button2Secondary" parent="Button2Secondary.Parent" />
+
     <style name="Button2Primary" parent="Button2Primary.Parent" />
+
     <style name="Body2TintedSunriseYellow" parent="Body2TintedSunriseYellow.Parent" />
+
     <style name="Body2TintedFireRed" parent="Body2TintedFireRed.Parent" />
+
     <style name="Body2TintedMidnightBlue" parent="Body2TintedMidnightBlue.Parent" />
+
     <style name="Body2TintedEvergreen" parent="Body2TintedEvergreen.Parent" />
+
     <style name="Body2Inverse" parent="Body2Inverse.Parent" />
+
     <style name="Body2Inactive" parent="Body2Inactive.Parent" />
+
     <style name="Body2Secondary" parent="Body2Secondary.Parent" />
+
     <style name="Body2Primary" parent="Body2Primary.Parent" />
+
     <style name="OverlineTintedSunriseYellow" parent="OverlineTintedSunriseYellow.Parent" />
+
     <style name="OverlineTintedFireRed" parent="OverlineTintedFireRed.Parent" />
+
     <style name="OverlineTintedMidnightBlue" parent="OverlineTintedMidnightBlue.Parent" />
+
     <style name="OverlineTintedEvergreen" parent="OverlineTintedEvergreen.Parent" />
+
     <style name="OverlineInverse" parent="OverlineInverse.Parent" />
+
     <style name="OverlineInactive" parent="OverlineInactive.Parent" />
+
     <style name="OverlineSecondary" parent="OverlineSecondary.Parent" />
+
     <style name="OverlinePrimary" parent="OverlinePrimary.Parent" />
+
     <style name="CaptionTintedSunriseYellow" parent="CaptionTintedSunriseYellow.Parent" />
+
     <style name="CaptionTintedFireRed" parent="CaptionTintedFireRed.Parent" />
+
     <style name="CaptionTintedMidnightBlue" parent="CaptionTintedMidnightBlue.Parent" />
+
     <style name="CaptionTintedEvergreen" parent="CaptionTintedEvergreen.Parent" />
+
     <style name="CaptionInverse" parent="CaptionInverse.Parent" />
+
     <style name="CaptionInactive" parent="CaptionInactive.Parent" />
+
     <style name="CaptionSecondary" parent="CaptionSecondary.Parent" />
+
     <style name="CaptionPrimary" parent="CaptionPrimary.Parent" />
 
 </resources>
+
