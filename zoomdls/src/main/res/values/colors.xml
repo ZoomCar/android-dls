@@ -10,6 +10,7 @@
     <color name="phantom_grey_08">#383838</color>
     <color name="phantom_grey_09">#292929</color>
     <color name="phantom_grey_10">#1f1f1f</color>
+    <color name="phantom_grey_10_87_opacity">#de1f1f1f</color>
     <color name="ever_green_01">#e6ffea</color>
     <color name="ever_green_02">#b9fac2</color>
     <color name="ever_green_03">#8bf095</color>
@@ -26,6 +27,7 @@
     <color name="midnight_blue_04">#93a3e6</color>
     <color name="midnight_blue_05">#6f81d6</color>
     <color name="midnight_blue_06">#5160c2</color>
+    <color name="midnight_blue_06_08_opacity">#145160c2</color>
     <color name="midnight_blue_07">#3b46ad</color>
     <color name="midnight_blue_08">#282f8f</color>
     <color name="midnight_blue_09">#1f2166</color>
@@ -53,5 +55,5 @@
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
 
-    <color name="background_status_bar">#06000000</color> <!--2% black-->
+    <color name="background_status_bar">#05000000</color> <!--2% black-->
 </resources>
