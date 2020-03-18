@@ -4,7 +4,7 @@
     <style name="GreenAccent">
         <item name="colorPrimary">@color/ever_green_06</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSurface">@color/ever_green_06</item>
+        <item name="colorOnSurface">@color/phantom_grey_10</item>
     </style>
 
 </resources>
