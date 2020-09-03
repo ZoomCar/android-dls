@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.zoomcar.androiduikit.R
-import com.zoomcar.androiduikit.databinding.LayoutSegmentedButtonBinding
+import com.zoomcar.zoomdls.R
+import com.zoomcar.zoomdls.databinding.LayoutSegmentedButtonBinding
 import com.zoomcar.uikit.interfaces.IRadioSelectionBehaviour
 import com.zoomcar.util.UiUtil
 import com.zoomcar.util.getNullCheck

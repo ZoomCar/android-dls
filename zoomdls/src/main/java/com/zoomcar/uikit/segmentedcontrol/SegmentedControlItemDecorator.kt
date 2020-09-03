@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.zoomcar.util.UiUtil
 
 class SegmentedControlItemDecorator(context: Context) : RecyclerView.ItemDecoration() {
-    private val divider: Drawable? = ContextCompat.getDrawable(context, com.zoomcar.androiduikit.R.drawable.horizontal_divider_line)
+    private val divider: Drawable? = ContextCompat.getDrawable(context, com.zoomcar.zoomdls.R.drawable.horizontal_divider_line)
     private val dividerMargin = UiUtil.dpToPixels(8, context)
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {

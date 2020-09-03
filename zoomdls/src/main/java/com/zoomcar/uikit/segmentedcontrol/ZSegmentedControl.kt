@@ -6,8 +6,8 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.zoomcar.androiduikit.R
-import com.zoomcar.androiduikit.databinding.LayoutSegmentedControlBinding
+import com.zoomcar.zoomdls.R
+import com.zoomcar.zoomdls.databinding.LayoutSegmentedControlBinding
 import com.zoomcar.util.UiUtil
 import com.zoomcar.util.isValid
 
