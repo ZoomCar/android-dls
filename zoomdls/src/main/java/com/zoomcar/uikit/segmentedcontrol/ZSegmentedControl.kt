@@ -13,10 +13,20 @@ import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSegmentedControlBinding
 
-class ZSegmentedControl @JvmOverloads constructor(context: Context,
-                                                  attrs: AttributeSet? = null,
-                                                  @AttrRes defStyleAttr: Int = 0
-) : ConstraintLayout(context, attrs, defStyleAttr) {
+class ZSegmentedControl : ConstraintLayout {
+
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context,
+                attrs: AttributeSet?
+    ) : super(context, attrs)
+
+    constructor(context: Context,
+                attrs: AttributeSet? = null,
+                @AttrRes defStyleAttr: Int = 0
+    ): super(context, attrs, defStyleAttr){
+
+    }
     var model: ZSegmentedControlUIModel? = null
     val binding: LayoutSegmentedControlBinding
     val segmentAdapter: ZSegmentedControlAdapter
