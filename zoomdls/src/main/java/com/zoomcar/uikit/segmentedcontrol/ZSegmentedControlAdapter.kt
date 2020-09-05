@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.zoomcar.uikit.interfaces.IRadioButton
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSegmentedButtonBinding
 import com.zoomcar.uikit.interfaces.IRadioSelectionBehaviour
@@ -60,12 +61,13 @@ class ZSegmentedControlAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
     class SegmentedButtonViewHolder(val binding: LayoutSegmentedButtonBinding,
                                     private val adapterListener: ISegmentAdapterListener,
                                     private val radioListener: IRadioSelectionBehaviour
-    ) : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
+    ) : RecyclerView.ViewHolder(binding.root), View.OnClickListener, IRadioButton {
         init {
             binding.cardBg.setOnClickListener(this)
         }
 
         fun setData(model: ZSegmentedControlButtonModel) {
+            val context = binding.root.context
             binding.root.layoutParams.width = adapterListener.getCellSize()
             binding.root.tag = model
             binding.textName.text = model.name
@@ -73,23 +75,29 @@ class ZSegmentedControlAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
                 radioListener.onSelectPosition(bindingAdapterPosition)
                 binding.cardBg.apply {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        elevation = UiUtil.dpToPixels(4, binding.root.context).toFloat()
+                        elevation = UiUtil.dpToPixels(
+                                context.resources.getDimensionPixelSize(R.dimen.segmented_control_selected_button_elevation),
+                                context
+                        ).toFloat()
                     }
-                    setCardBackgroundColor(ContextCompat.getColor(binding.root.context, R.color.ever_green_06))
+                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.ever_green_06))
                 }
-                binding.textName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.white))
+                binding.textName.setTextColor(ContextCompat.getColor(context, R.color.white))
             } else {
                 binding.cardBg.apply {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        elevation = UiUtil.dpToPixels(0, binding.root.context).toFloat()
+                        elevation = UiUtil.dpToPixels(
+                                context.resources.getDimensionPixelSize(R.dimen.segmented_control_unselected_button_elevation),
+                                context
+                        ).toFloat()
                     }
-                    setCardBackgroundColor(ContextCompat.getColor(binding.root.context, R.color.transparent))
+                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.transparent))
                 }
-                binding.textName.setTextColor(ContextCompat.getColor(binding.root.context, R.color.phantom_grey_10))
+                binding.textName.setTextColor(ContextCompat.getColor(context, R.color.phantom_grey_10))
             }
         }
 
-        fun isSelected(): Boolean {
+        override fun isSelected(): Boolean {
             val data = binding.root.tag
             data?.let {
                 return (it as ZSegmentedControlButtonModel).isSelected

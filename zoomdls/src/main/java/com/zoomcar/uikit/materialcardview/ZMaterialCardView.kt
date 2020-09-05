@@ -5,15 +5,8 @@ import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import com.google.android.material.card.MaterialCardView
 
-class ZMaterialCardView : MaterialCardView {
-    constructor(
-            context: Context,
-            attrs: AttributeSet?
-    ) : super(context, attrs)
-
-    constructor(
-            context: Context,
-            attrs: AttributeSet?,
-            @AttrRes defStyleAttr: Int
-    ) : super(context, attrs, defStyleAttr)
-}
+class ZMaterialCardView @JvmOverloads constructor(
+        context: Context,
+        attrs: AttributeSet? = null,
+        @AttrRes defStyleAttr: Int = 0
+) : MaterialCardView(context, attrs, defStyleAttr)

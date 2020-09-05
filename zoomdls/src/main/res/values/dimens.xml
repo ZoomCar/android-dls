@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="segmented_control_divider_margin">4dp</dimen>
+    <dimen name="segmented_control_selected_button_elevation">2dp</dimen>
+    <dimen name="segmented_control_unselected_button_elevation">0dp</dimen>
+</resources>
