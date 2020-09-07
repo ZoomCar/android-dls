@@ -54,6 +54,7 @@
     <color name="sunrise_yellow_10">#2e1a0a</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
 
     <color name="background_status_bar">#05000000</color> <!--2% black-->
 </resources>
