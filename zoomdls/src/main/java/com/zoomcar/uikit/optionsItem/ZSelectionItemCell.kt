@@ -1,6 +1,7 @@
 package com.zoomcar.uikit.optionsItem
 
 import android.content.Context
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSelectionItemBinding
+import kotlinx.android.parcel.Parcelize
 
 class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
     private val binding: LayoutSelectionItemBinding
@@ -35,6 +37,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
     }
 
     fun setData(model: SelectionItemUIModel) {
+        binding.root.tag = model.id
         binding.textEdit.apply {
             isVisible = model.isEditable
             setOnClickListener(this@ZSelectionItemCell)
@@ -88,26 +91,30 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
         DROP_OFF_LOCATION
     }
 
+    @Parcelize
     data class SelectionItemUIModel(
+            var id: String,
             var title: String? = null,
             var desc: String? = null,
             var isEditable: Boolean = false,
             var type: SelectionItemType
-    )
+    ): Parcelable
 
     override fun onClick(v: View?) {
         when(v?.id) {
             R.id.text_edit -> {
-                listener?.onEditClick()
+                val id = binding.root.tag as String
+                listener?.onEditClick(id)
             }
             R.id.layout_selection_item -> {
-                listener?.onItemClick()
+                val id = binding.root.tag as String
+                listener?.onItemClick(id)
             }
         }
     }
 
     interface IZSelectionItemListener {
-        fun onItemClick()
-        fun onEditClick()
+        fun onItemClick(id: String)
+        fun onEditClick(id: String)
     }
 }

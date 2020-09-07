@@ -7,6 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
+        android:minHeight="62dp"
         android:id="@+id/layout_selection_item">
         <com.zoomcar.uikit.imageview.ZImageView
             android:layout_width="32dp"
