@@ -1,5 +1,5 @@
 <resources>
+    <public name="zoomdls_dummy" type="string"/>
     <string name="app_name">ZoomDLS</string>
-
     <string name="label_edit">Edit</string>
 </resources>
