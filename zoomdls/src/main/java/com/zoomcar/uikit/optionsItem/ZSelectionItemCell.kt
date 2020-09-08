@@ -43,7 +43,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
             setOnClickListener(this@ZSelectionItemCell)
         }
         when (model.type) {
-            SelectionItemType.DEFAULT -> {
+            SelectionItemType.PRIMARY -> {
                 binding.imageType.setImageResource(R.drawable.ic_circle_grey)
                 binding.textTitle.apply {
                     TextViewCompat.setTextAppearance(this, R.style.OverlineSecondary);
@@ -61,7 +61,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
                     TextViewCompat.setTextAppearance(this, R.style.CaptionInactive);
                 }
             }
-            SelectionItemType.DROP_OFF_LOCATION -> {
+            SelectionItemType.DEFAULT -> {
                 binding.imageType.setImageResource(R.drawable.ic_circle_grey)
                 binding.textTitle.apply {
                     TextViewCompat.setTextAppearance(this, R.style.Body2Primary);
@@ -87,8 +87,8 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
 
     enum class SelectionItemType {
         DEFAULT,
-        HIGHLIGHTED,
-        DROP_OFF_LOCATION
+        PRIMARY,
+        HIGHLIGHTED
     }
 
     @Parcelize
