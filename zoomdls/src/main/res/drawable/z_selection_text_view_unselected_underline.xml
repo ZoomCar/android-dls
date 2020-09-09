@@ -13,7 +13,7 @@
                 android:width="1dp"
                 android:dashGap="2dp"
                 android:dashWidth="2dp"
-                android:color="@android:color/black" />
+                android:color="@color/phantom_grey_06" />
         </shape>
     </item>
 </layer-list>
