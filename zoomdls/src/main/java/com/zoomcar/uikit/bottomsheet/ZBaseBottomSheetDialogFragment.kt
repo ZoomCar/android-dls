@@ -10,7 +10,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutBottomSheetFragmentBinding
 
-open class ZBaseBottomSheet : BottomSheetDialogFragment(), View.OnClickListener {
+open class ZBaseBottomSheetDialogFragment : BottomSheetDialogFragment(), View.OnClickListener {
     protected lateinit var binding: LayoutBottomSheetFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
