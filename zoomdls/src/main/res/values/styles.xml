@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ZBottomSheetDialogStyle.Parent" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="behavior_peekHeight">1000dp</item>
+    </style>
+
+    <style name="ZBottomSheetDialogStyle" parent="ZBottomSheetDialogStyle.Parent" />
+</resources>
