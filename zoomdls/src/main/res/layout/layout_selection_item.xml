@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:minHeight="62dp"
+        android:id="@+id/layout_selection_item">
+        <com.zoomcar.uikit.imageview.ZImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:id="@+id/image_type"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_circle_grey"
+            android:clickable="false"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toRightOf="@+id/image_type"
+            app:layout_constraintRight_toLeftOf="@+id/text_edit"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp">
+            <com.zoomcar.uikit.textview.ZTextView
+                style="@style/Body2Primary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Forum Centre City, Mysuru"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:id="@+id/text_title"
+                android:clickable="false"/>
+
+            <com.zoomcar.uikit.textview.ZTextView
+                android:id="@+id/text_desc"
+                style="@style/CaptionInactive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/text_title"
+                app:layout_constraintLeft_toLeftOf="@+id/text_title"
+                tools:text="1.8 kms away from selected destination"
+                android:clickable="false"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.zoomcar.uikit.textview.ZTextView
+            android:id="@+id/text_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/ever_green_06"
+            android:lineSpacingExtra="2sp"
+            android:gravity="end"
+            android:text="@string/label_edit"
+            android:paddingStart="12dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="visible"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

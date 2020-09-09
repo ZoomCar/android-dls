@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/root_segmented_control">
-        <TextView
+        <com.zoomcar.uikit.textview.ZTextView
             style="@style/Button2Primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
