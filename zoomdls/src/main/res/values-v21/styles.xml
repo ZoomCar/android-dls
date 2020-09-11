@@ -4,4 +4,9 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
+    <style name="ZMaterialButtonStyle" parent="MaterialButton.ZoomMaterialButtonStyle">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:stateListAnimator">@animator/zmaterial_action_button_statelist_animator</item>
+    </style>
 </resources>

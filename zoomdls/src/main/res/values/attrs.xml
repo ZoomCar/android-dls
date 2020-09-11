@@ -3,4 +3,10 @@
     <declare-styleable name="ZSelectionTextView">
         <attr name="zstv_selected" format="boolean" />
     </declare-styleable>
+    <declare-styleable name="ZFlowTextSelectionLayout">
+        <attr name="selection_type" format="enum">
+            <enum name="SINGLE" value="0"/>
+            <enum name="MULTI" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>

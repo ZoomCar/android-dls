@@ -12,4 +12,62 @@
     </style>
 
     <style name="ZBottomSheetDialogStyle" parent="ZBottomSheetDialogStyle.Parent" />
+
+    <style name="ZMaterialTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <!-- Style attributes -->
+        <!-- Radius -->
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxCornerRadiusBottomStart">4dp</item>
+        <item name="boxCornerRadiusTopStart">4dp</item>
+        <item name="boxCornerRadiusTopEnd">4dp</item>
+        <item name="boxCornerRadiusBottomEnd">4dp</item>
+
+        <!-- Stroke -->
+        <item name="boxStrokeColor">@color/ever_green_06</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="boxStrokeErrorColor">@color/fire_red_06</item>
+
+        <!-- Hint Resting state -->
+        <item name="android:textColorHint">@color/phantom_grey_10</item>
+
+        <!-- Hint Floating state -->
+        <item name="hintTextColor">@color/ever_green_06</item>
+
+        <item name="errorTextColor">@color/fire_red_07</item>
+        <item name="errorIconDrawable">@null</item>
+
+        <!-- Hint Appearance, only affects size -->
+        <item name="hintTextAppearance">@style/ZMaterialTextInputHintText</item>
+
+        <!-- Error Appearance, only affects size -->
+        <item name="errorTextAppearance">@style/ZMaterialTextInputLayoutErrorText</item>
+    </style>
+
+    <style name="ZMaterialTextInputHintText" parent="@style/Body1Primary">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ZMaterialTextInputLayoutErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ZMaterialTextInputLayoutTheme">
+        <!-- Text Color -->
+        <item name="android:textColorPrimary">@color/phantom_grey_10</item>
+        <!-- From Body2Default -->
+        <!-- Text Size -->
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineSpacingExtra">6sp</item>
+        <item name="android:textColor">@color/phantom_grey_10</item>
+        <item name="android:fontFamily">@font/ibm_plex_regular</item>
+        <item name="android:textCursorDrawable">@drawable/z_cursor_evergreen_06</item>
+    </style>
+
+    <style name="MaterialButton.ZoomMaterialButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">@style/Button1Inactive</item>
+        <item name="backgroundTint">@color/zmaterial_action_button_bg_selector</item>
+    </style>
+    <style name="ZMaterialButtonStyle" parent="MaterialButton.ZoomMaterialButtonStyle" />
+
 </resources>

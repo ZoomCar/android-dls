@@ -12,7 +12,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:flow_horizontalBias="0.0"
-            app:flow_horizontalGap="8dp"
+            app:flow_horizontalGap="24dp"
             app:flow_horizontalStyle="packed"
             app:flow_verticalGap="8dp"
             app:flow_wrapMode="chain"
