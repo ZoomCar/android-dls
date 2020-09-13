@@ -8,17 +8,20 @@ import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.zoomcar.uikit.interfaces.IRadioButton
-import com.zoomcar.zoomdls.R
-import com.zoomcar.zoomdls.databinding.LayoutSegmentedButtonBinding
 import com.zoomcar.uikit.interfaces.IRadioSelectionBehaviour
 import com.zoomcar.util.UiUtil
 import com.zoomcar.util.getNullCheck
+import com.zoomcar.zoomdls.R
+import com.zoomcar.zoomdls.databinding.LayoutSegmentedButtonBinding
 
-class ZSegmentedControlAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
+class ZSegmentedControlAdapter(
+        private val segmentedClickListener: IZSegmentedButtonClickListener
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         , IRadioSelectionBehaviour {
     private var data: List<ZSegmentedControlButtonModel>? = null
     private var selectedPosition = 0
     private var cellSize = 0
+
     private val adapterlistener: ISegmentAdapterListener = object : ISegmentAdapterListener {
         override fun getCellSize(): Int {
             return cellSize
@@ -138,6 +141,7 @@ class ZSegmentedControlAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
             val currentSelectedButton = data?.get(selectedPosition)
             currentSelectedButton?.let {
                 it.isSelected = true
+                segmentedClickListener.onSegmentButtonClick(selectedPosition)
             }
             notifyItemChanged(selectedPosition)
         }
@@ -145,5 +149,9 @@ class ZSegmentedControlAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>()
 
     override fun onSelectPosition(position: Int) {
         selectedPosition = position
+    }
+
+    interface IZSegmentedButtonClickListener {
+        fun onSegmentButtonClick(position: Int)
     }
 }
