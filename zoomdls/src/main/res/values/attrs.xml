@@ -5,8 +5,8 @@
     </declare-styleable>
     <declare-styleable name="ZFlowTextSelectionLayout">
         <attr name="selection_type" format="enum">
-            <enum name="SINGLE" value="0"/>
-            <enum name="MULTI" value="1"/>
+            <enum name="single" value="0"/>
+            <enum name="multi" value="1"/>
         </attr>
     </declare-styleable>
 </resources>
