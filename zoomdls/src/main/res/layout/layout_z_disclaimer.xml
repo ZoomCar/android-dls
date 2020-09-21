@@ -13,7 +13,7 @@
         android:paddingBottom="12dp"
         android:id="@+id/disclaimer_container">
 
-        <TextView
+        <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_disclaimier_title"
             style="@style/OverlineSecondary"
             android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Home" />
 
-        <TextView
+        <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_disclaimer"
             style="@style/CaptionTintedMidnightBlue"
             android:layout_width="0dp"
