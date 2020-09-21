@@ -46,28 +46,28 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
             SelectionItemType.PRIMARY -> {
                 binding.imageType.setImageResource(R.drawable.zic_circle_grey)
                 binding.textTitle.apply {
-                    TextViewCompat.setTextAppearance(this, R.style.OverlineSecondary);
+                    TextViewCompat.setTextAppearance(this, R.style.OverlineSecondary)
                 }
                 binding.textDesc.apply {
-                    TextViewCompat.setTextAppearance(this, R.style.CaptionPrimary);
+                    TextViewCompat.setTextAppearance(this, R.style.CaptionPrimary)
                 }
             }
             SelectionItemType.HIGHLIGHTED -> {
                 binding.imageType.setImageResource(R.drawable.zic_circle_green)
                 binding.textTitle.apply {
-                    TextViewCompat.setTextAppearance(this, R.style.Button2Primary);
+                    TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
                 }
                 binding.textDesc.apply {
-                    TextViewCompat.setTextAppearance(this, R.style.CaptionInactive);
+                    TextViewCompat.setTextAppearance(this, R.style.CaptionInactive)
                 }
             }
             SelectionItemType.DEFAULT -> {
                 binding.imageType.setImageResource(R.drawable.zic_circle_grey)
                 binding.textTitle.apply {
-                    TextViewCompat.setTextAppearance(this, R.style.Body2Primary);
+                    TextViewCompat.setTextAppearance(this, R.style.Body2Primary)
                 }
                 binding.textDesc.apply {
-                    TextViewCompat.setTextAppearance(this, R.style.CaptionInactive);
+                    TextViewCompat.setTextAppearance(this, R.style.CaptionInactive)
                 }
             }
         }

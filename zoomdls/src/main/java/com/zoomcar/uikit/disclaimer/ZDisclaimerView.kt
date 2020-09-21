@@ -9,6 +9,7 @@ import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.core.widget.TextViewCompat
 import com.zoomcar.util.getNullCheck
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZDisclaimerBinding
@@ -56,9 +57,21 @@ class ZDisclaimerView : ConstraintLayout {
 
     fun setData(data: ZDisclaimerUiModel) {
         when (data.disclaimerType) {
-            DisclaimerType.INFO -> binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_midnightblue01_corner_radius_4dp)
-            DisclaimerType.DEBUG -> binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_zoom_grey_corner_radius_4dp)
-            DisclaimerType.WARNING -> binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_sunrise_yellow_corner_radius_4dp)
+            DisclaimerType.INFO -> {
+                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.CaptionTintedMidnightBlue)
+                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedMidnightBlue)
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_midnightblue01_corner_radius_4dp)
+            }
+            DisclaimerType.DEBUG -> {
+                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.OverlineSecondary)
+                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionPrimary)
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_zoom_grey_corner_radius_4dp)
+            }
+            DisclaimerType.WARNING -> {
+                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.OverlineSecondary)
+                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionPrimary)
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_sunrise_yellow_corner_radius_4dp)
+            }
         }
         binding.textDisclaimierTitle.apply {
             isVisible = data.disclaimerTitle.getNullCheck()
