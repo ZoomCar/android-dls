@@ -15,7 +15,7 @@
             android:id="@+id/image_type"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_circle_grey"
+            app:srcCompat="@drawable/ic_z_circle_grey"
             android:clickable="false"/>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"

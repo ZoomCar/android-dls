@@ -13,7 +13,7 @@ import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSegmentedControlBinding
 
-class ZSegmentedControl : ConstraintLayout {
+class ZSegmentedControl : ConstraintLayout, ZSegmentedControlAdapter.IZSegmentedButtonClickListener {
 
     constructor(context: Context) : super(context)
 
@@ -24,18 +24,19 @@ class ZSegmentedControl : ConstraintLayout {
     constructor(context: Context,
                 attrs: AttributeSet? = null,
                 @AttrRes defStyleAttr: Int = 0
-    ): super(context, attrs, defStyleAttr){
+    ) : super(context, attrs, defStyleAttr)
 
-    }
     var model: ZSegmentedControlUIModel? = null
     val binding: LayoutSegmentedControlBinding
-    val segmentAdapter: ZSegmentedControlAdapter
+    private val segmentAdapter: ZSegmentedControlAdapter
+
+    var listener: IZSegmentedControlListener? = null
     private var parentWidth = 0
 
     init {
         val inflater: LayoutInflater = LayoutInflater.from(context)
         binding = DataBindingUtil.inflate(inflater, R.layout.layout_segmented_control, this, true)
-        segmentAdapter = ZSegmentedControlAdapter()
+        segmentAdapter = ZSegmentedControlAdapter(this)
         initRecylerView()
     }
 
@@ -57,6 +58,16 @@ class ZSegmentedControl : ConstraintLayout {
         this.layoutParams = params
     }
 
+    fun seTopMargin(@DimenRes margin: Int) {
+        val params = LayoutParams(
+                LayoutParams.MATCH_PARENT,
+                LayoutParams.WRAP_CONTENT
+        )
+        val marginInPix = resources.getDimensionPixelSize(margin)
+        params.setMargins(0, marginInPix, 0, 0)
+        this.layoutParams = params
+    }
+
     fun setData(item: ZSegmentedControlUIModel) {
         this.model = item
         binding.textHeader.apply {
@@ -67,6 +78,10 @@ class ZSegmentedControl : ConstraintLayout {
         model?.list?.let {
             segmentAdapter.setData(it)
         }
+    }
+
+    fun setZSegmentedControlClickListener(listener: IZSegmentedControlListener) {
+        this.listener = listener
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -86,7 +101,18 @@ class ZSegmentedControl : ConstraintLayout {
     }
 
     data class ZSegmentedControlUIModel(
+            val id: String,
             val header: String,
             val list: List<ZSegmentedControlAdapter.ZSegmentedControlButtonModel>
     )
+
+    interface IZSegmentedControlListener {
+        fun onSegmentSelected(headerId: String, filterId: String)
+    }
+
+    override fun onSegmentButtonClick(position: Int) {
+        model?.let { data ->
+            listener?.onSegmentSelected(data.id, data.list[position].id)
+        }
+    }
 }
