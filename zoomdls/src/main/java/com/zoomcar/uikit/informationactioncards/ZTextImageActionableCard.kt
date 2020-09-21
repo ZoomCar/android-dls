@@ -1,6 +1,7 @@
 package com.zoomcar.uikit.informationactioncards
 
 import android.content.Context
+import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -16,8 +17,20 @@ import com.zoomcar.zoomdls.databinding.LayoutTextImageActionableCardBinding
  * @author Shishir
  * Copyright (c) 2020 Zoomcar. All rights reserved.
  */
-class ZTextImageActionableCard(context: Context, val listener: IActionableCardClick) : ConstraintLayout(context), View.OnClickListener {
+class ZTextImageActionableCard : ConstraintLayout, View.OnClickListener {
     private val binding: LayoutTextImageActionableCardBinding
+    private var listener: IActionableCardClick? = null
+
+    fun setZTextImageActionableCardListener(listener: IActionableCardClick) {
+        this.listener = listener
+    }
+
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context,
+                attrs: AttributeSet?
+    ) : super(context, attrs)
+
 
     init {
         val inflater = LayoutInflater.from(context)
@@ -38,7 +51,7 @@ class ZTextImageActionableCard(context: Context, val listener: IActionableCardCl
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.text_action -> {
-                listener.onActionClicked()
+                listener?.onActionClicked()
             }
         }
     }

@@ -9,4 +9,11 @@
             <enum name="MULTI" value="1"/>
         </attr>
     </declare-styleable>
+    <declare-styleable name="ZDisclaimerView">
+        <attr name="disclaimer_type" format="enum">
+            <enum name="info" value="0"/>
+            <enum name="warning" value="1"/>
+            <enum name="debug" value="2"/>
+        </attr>
+    </declare-styleable>
 </resources>

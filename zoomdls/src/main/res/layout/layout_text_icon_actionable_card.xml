@@ -22,7 +22,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/image_info"
             android:layout_marginStart="8dp" />
-        <TextView
+        <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_info_desc"
             style="@style/CaptionInactive"
             android:layout_width="0dp"
@@ -33,7 +33,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintHorizontal_bias="0"
             tools:text="We have taken strict measures to ensure a 100% safe and sanitized car for your needs" />
-        <TextView
+        <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_action"
             style="@style/CaptionTintedEvergreen"
             android:layout_width="wrap_content"

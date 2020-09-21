@@ -3,8 +3,10 @@ package com.zoomcar.uikit.informationactioncards
 import android.content.Context
 import android.graphics.Paint
 import android.os.Parcelable
+import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.zoomcar.util.isValid
@@ -19,10 +21,25 @@ import kotlinx.android.parcel.Parcelize
  * @author Shishir
  * Copyright (c) 2020 Zoomcar. All rights reserved.
  */
-class ZTextIconActionableCard(context: Context,
-                              val listener: IActionableCardClick
-) : ConstraintLayout(context), View.OnClickListener {
+class ZTextIconActionableCard : ConstraintLayout, View.OnClickListener {
     private val binding: LayoutTextIconActionableCardBinding
+    private var listener: IActionableCardClick? = null
+
+    fun setZTextIconActionableCardListener(listener: IActionableCardClick) {
+        this.listener = listener
+    }
+
+    constructor(context: Context) : super(context)
+
+    constructor(context: Context,
+                attrs: AttributeSet?
+    ) : super(context, attrs)
+
+    constructor(
+            context: Context,
+            attrs: AttributeSet? = null,
+            @AttrRes defStyleAttr: Int = 0
+    ) : super(context, attrs, defStyleAttr)
 
     init {
         val inflater = LayoutInflater.from(context)
@@ -45,7 +62,7 @@ class ZTextIconActionableCard(context: Context,
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.text_action -> {
-                listener.onActionClicked()
+                listener?.onActionClicked()
             }
         }
     }
