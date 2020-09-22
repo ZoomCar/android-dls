@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        <com.zoomcar.uikit.imageview.ZImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:id="@+id/image_info"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.zoomcar.uikit.textview.ZTextView
+            style="@style/Body2Primary"
+            android:id="@+id/text_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="#StaySafe #TravelSafe"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/image_info"
+            android:layout_marginStart="8dp" />
+        <com.zoomcar.uikit.textview.ZTextView
+            android:id="@+id/text_info_desc"
+            style="@style/CaptionInactive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_info_title"
+            app:layout_constraintLeft_toLeftOf="@+id/text_info_title"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            tools:text="We have taken strict measures to ensure a 100% safe and sanitized car for your needs" />
+        <com.zoomcar.uikit.textview.ZTextView
+            android:id="@+id/text_action"
+            style="@style/CaptionTintedEvergreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Know More"
+            android:layout_marginTop="8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/text_info_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_info_desc"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
