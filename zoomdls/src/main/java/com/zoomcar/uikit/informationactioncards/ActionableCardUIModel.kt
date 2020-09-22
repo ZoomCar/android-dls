@@ -12,8 +12,8 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ActionableCardUIModel(
-        var header: String? = "",
-        var desc: String? = "",
-        var img: String? = "",
-        var actionText: String? = ""
+        var header: String? = null,
+        var desc: String? = null,
+        var img: String? = null,
+        var actionText: String? = null
 ) : Parcelable

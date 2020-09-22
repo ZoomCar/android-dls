@@ -64,8 +64,8 @@ class ZTextActionableCard : ConstraintLayout, View.OnClickListener {
 
     @Parcelize
     data class TextActionableCardUIModel(
-            var header: String? = "",
-            var desc: String? = "",
-            var actionText: String? = ""
+            var header: String? = null,
+            var desc: String? = null,
+            var actionText: String? = null
     ) : Parcelable
 }
