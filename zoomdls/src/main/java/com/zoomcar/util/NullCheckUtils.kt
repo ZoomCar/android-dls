@@ -9,8 +9,8 @@ fun String?.isValid(): Boolean {
     return !this.isNullOrEmpty() && !this.equals("null", ignoreCase = true)
 }
 
-fun Map<*, *>?.getNullCheck(): Boolean {
-    return !this.isNullOrEmpty() && this.isNotEmpty()
+fun Map<*, *>?.isNotNullOrEmpty(): Boolean {
+    return !this.isNullOrEmpty()
 }
 
 fun Collection<*>?.getNullCheck(): Boolean {
