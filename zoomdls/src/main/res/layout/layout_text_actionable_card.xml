@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="16dp"
@@ -18,7 +18,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/text_action"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Drop-Off Location" />
+            tools:text="Drop-Off Location"
+            android:visibility="gone"/>
 
         <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_desc"
@@ -26,10 +27,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
-            app:layout_constraintLeft_toLeftOf="@+id/text_title"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/text_action"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
-            android:layout_marginEnd="16dp"
             tools:text="Forum Centre City, Hyderali Road, Nazarbad, Mysuru, Karnataka - 570010" />
 
         <com.zoomcar.uikit.textview.ZTextView
