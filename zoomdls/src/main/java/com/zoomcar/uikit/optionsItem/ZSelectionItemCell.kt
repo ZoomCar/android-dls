@@ -44,7 +44,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
         }
         when (model.type) {
             SelectionItemType.PRIMARY -> {
-                binding.imageType.setImageResource(R.drawable.zic_circle_grey)
+                binding.imageType.setImageResource(R.drawable.ic_z_circle_grey)
                 binding.textTitle.apply {
                     TextViewCompat.setTextAppearance(this, R.style.OverlineSecondary)
                 }
@@ -53,7 +53,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
                 }
             }
             SelectionItemType.HIGHLIGHTED -> {
-                binding.imageType.setImageResource(R.drawable.zic_circle_green)
+                binding.imageType.setImageResource(R.drawable.ic_z_circle_green)
                 binding.textTitle.apply {
                     TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
                 }
@@ -62,7 +62,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
                 }
             }
             SelectionItemType.DEFAULT -> {
-                binding.imageType.setImageResource(R.drawable.zic_circle_grey)
+                binding.imageType.setImageResource(R.drawable.ic_z_circle_grey)
                 binding.textTitle.apply {
                     TextViewCompat.setTextAppearance(this, R.style.Body2Primary)
                 }

@@ -18,7 +18,7 @@
             android:background="@drawable/circle_grey_border"
             android:padding="5dp"
             android:tint="@color/phantom_grey_08"
-            app:srcCompat="@drawable/zic_close_white" />
+            app:srcCompat="@drawable/ic_z_close_white" />
 
         <LinearLayout
             android:id="@+id/bottom_sheet_container"
