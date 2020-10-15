@@ -5,7 +5,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/root_segmented_control">
+        android:id="@+id/root_segmented_control"
+        android:background="@color/white">
         <com.zoomcar.uikit.textview.ZTextView
             style="@style/Button2Primary"
             android:layout_width="wrap_content"

@@ -19,7 +19,7 @@ class ZSegmentedControlAdapter(
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>()
         , IRadioSelectionBehaviour {
     private var data: List<ZSegmentedControlButtonModel>? = null
-    private var selectedPosition = 0
+    private var selectedPosition = -1
     private var cellSize = 0
 
     private val adapterlistener: ISegmentAdapterListener = object : ISegmentAdapterListener {
@@ -132,11 +132,14 @@ class ZSegmentedControlAdapter(
             val prevPos = selectedPosition
             onSelectPosition(position)
 
-            val prevSelectedButton = data?.get(prevPos)
-            prevSelectedButton?.let {
-                it.isSelected = false
+            if(prevPos != -1) {
+                val prevSelectedButton = data?.get(prevPos)
+                prevSelectedButton?.let {
+                    it.isSelected = false
+                }
+                notifyItemChanged(prevPos)
+
             }
-            notifyItemChanged(prevPos)
 
             val currentSelectedButton = data?.get(selectedPosition)
             currentSelectedButton?.let {

@@ -68,8 +68,8 @@ class ZDisclaimerView : ConstraintLayout {
                 binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_zoom_grey_corner_radius_4dp)
             }
             DisclaimerType.WARNING -> {
-                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.OverlineSecondary)
-                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionPrimary)
+                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.CaptionTintedSunriseYellow)
+                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedSunriseYellow)
                 binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_sunrise_yellow_corner_radius_4dp)
             }
         }
@@ -88,7 +88,27 @@ class ZDisclaimerView : ConstraintLayout {
             var disclaimerTitle: String? = null,
             var disclaimer: String? = null,
             var disclaimerType: DisclaimerType? = DisclaimerType.INFO
-    ) : Parcelable
+    ) : Parcelable {
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (javaClass != other?.javaClass) return false
+
+            other as ZDisclaimerUiModel
+
+            if (disclaimerTitle != other.disclaimerTitle) return false
+            if (disclaimer != other.disclaimer) return false
+            if (disclaimerType != other.disclaimerType) return false
+
+            return true
+        }
+
+        override fun hashCode(): Int {
+            var result = disclaimerTitle?.hashCode() ?: 0
+            result = 31 * result + (disclaimer?.hashCode() ?: 0)
+            result = 31 * result + (disclaimerType?.hashCode() ?: 0)
+            return result
+        }
+    }
 
     enum class DisclaimerType {
         INFO,

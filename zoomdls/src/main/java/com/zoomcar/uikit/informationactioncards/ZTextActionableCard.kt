@@ -46,7 +46,11 @@ class ZTextActionableCard : ConstraintLayout, View.OnClickListener {
     }
 
     fun setData(data: TextActionableCardUIModel) {
-        binding.textTitle.text = data.header
+        binding.textTitle.apply {
+            text = data.header
+            isVisible = data.header.isValid()
+        }
+
         binding.textDesc.text = data.desc
         binding.textAction.apply {
             text = data.actionText
