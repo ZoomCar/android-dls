@@ -68,4 +68,7 @@ open class ZBaseBottomSheetDialogFragment : BottomSheetDialogFragment(), View.On
             }
         }
     }
+
+    open fun onBottomSheetClosed() {
+    }
 }
