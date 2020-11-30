@@ -63,6 +63,7 @@ open class ZBaseBottomSheetDialogFragment : BottomSheetDialogFragment(), View.On
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.image_close -> {
+                onBottomSheetClosed()
                 activity?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
                 dismiss()
             }
