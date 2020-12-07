@@ -59,7 +59,7 @@
 
     <style name="ZMaterialTextInputLayoutTheme">
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/phantom_grey_10</item>
+        <item name="android:textColorPrimary">@color/zmaterial_edit_text_color</item>
         <!-- From Body2Default -->
         <!-- Text Size -->
         <item name="android:textSize">16sp</item>
