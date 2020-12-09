@@ -510,48 +510,56 @@
     <style name="OverlineTintedSunriseYellow.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/sunrise_yellow_06</item>
     </style>
 
     <style name="OverlineTintedFireRed.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/fire_red_06</item>
     </style>
 
     <style name="OverlineTintedMidnightBlue.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/midnight_blue_06</item>
     </style>
 
     <style name="OverlineTintedEvergreen.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/ever_green_06</item>
     </style>
 
     <style name="OverlineInverse.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="OverlineInactive.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/phantom_grey_04</item>
     </style>
 
     <style name="OverlineSecondary.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/phantom_grey_06</item>
     </style>
 
     <style name="OverlinePrimary.Parent" parent="IbmPlexMedium">
         <item name="android:textSize">12sp</item>
         <item name="android:lineSpacingExtra">4sp</item>
+        <item name="android:textAllCaps">true</item>
         <item name="android:textColor">@color/phantom_grey_10</item>
     </style>
 

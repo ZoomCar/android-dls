@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="ZBottomSheetDialogStyle.Parent" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:colorBackground">@android:color/transparent</item>
@@ -9,6 +10,10 @@
         <item name="android:windowIsFloating">false</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="behavior_peekHeight">1000dp</item>
+    </style>
+
+    <style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
     <style name="ZBottomSheetDialogStyle" parent="ZBottomSheetDialogStyle.Parent" />
@@ -54,7 +59,7 @@
 
     <style name="ZMaterialTextInputLayoutTheme">
         <!-- Text Color -->
-        <item name="android:textColorPrimary">@color/phantom_grey_10</item>
+        <item name="android:textColorPrimary">@color/zmaterial_edit_text_color</item>
         <!-- From Body2Default -->
         <!-- Text Size -->
         <item name="android:textSize">16sp</item>
