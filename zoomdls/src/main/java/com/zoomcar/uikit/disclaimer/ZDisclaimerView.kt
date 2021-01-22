@@ -72,7 +72,7 @@ class ZDisclaimerView : ConstraintLayout {
                 TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedSunriseYellow)
                 binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_sunrise_yellow_corner_radius_4dp)
             }
-            DisclaimerType.WARNING -> {
+            DisclaimerType.ERROR -> {
                 TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.CaptionTintedFireRed)
                 TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedFireRed)
                 binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_fire_red_corner_radius_4dp)
