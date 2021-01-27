@@ -22,7 +22,7 @@ allprojects {
 ```
 * Add the library dependency
 ```
-implementation 'com.github.ZoomCar:android-dls:1.1.1'
+implementation 'com.github.ZoomCar:android-dls:1.1.2'
 ```
 
 ### Find this project useful ? :heart:
