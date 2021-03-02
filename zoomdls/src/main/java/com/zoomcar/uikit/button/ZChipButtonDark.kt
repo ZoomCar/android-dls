@@ -20,7 +20,7 @@ import kotlinx.android.parcel.Parcelize
  * Copyright (c) 2021 Zoomcar. All rights reserved.
  */
 
-class c : ConstraintLayout {
+class ZChipButtonDark : ConstraintLayout {
     private val binding: LayoutZButtonDarkBinding
 
     constructor(context: Context) : super(context)
