@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.zoomcar.uikit.materialcardview.ZMaterialCardView
+        android:id="@+id/root_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/phantom_grey_10"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="8dp">
+
+            <com.zoomcar.uikit.imageview.ZImageView
+                android:id="@+id/image_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.zoomcar.uikit.textview.ZTextView
+                android:id="@+id/text_name"
+                style="@style/Button2Inverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Sort / Filters" />
+
+            <View
+                android:id="@+id/view_dot_highlight"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/fire_red_06_circular_bg"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@id/text_name"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.zoomcar.uikit.materialcardview.ZMaterialCardView>
+</layout>
