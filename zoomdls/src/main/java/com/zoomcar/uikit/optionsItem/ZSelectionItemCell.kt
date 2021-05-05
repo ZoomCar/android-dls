@@ -86,10 +86,12 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
         binding.textTitle.apply {
             text = model.title
             isVisible = model.title.isValid()
+            isSingleLine = model.isHeaderSingleLine
         }
         binding.textDesc.apply {
             text = model.desc
             isVisible = model.desc.isValid()
+            isSingleLine = model.isDescSingleLine
         }
     }
 
@@ -111,7 +113,9 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
             var title: String? = null,
             var desc: String? = null,
             var isEditable: Boolean = false,
-            var type: SelectionItemType
+            var type: SelectionItemType,
+            var isHeaderSingleLine: Boolean = false,
+            var isDescSingleLine: Boolean = false
     ): Parcelable
 
     override fun onClick(v: View?) {
