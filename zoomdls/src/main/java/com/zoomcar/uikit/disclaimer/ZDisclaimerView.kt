@@ -123,7 +123,7 @@ class ZDisclaimerView : ConstraintLayout {
 
         companion object {
             fun fromValue(type: Int) = values().first { it.ordinal == type }
-            fun fromValue(type: String?) = values().firstOrNull() { it.name == type }
+            fun fromValue(type: String?) = values().firstOrNull { it.name == type }
         }
     }
 }
