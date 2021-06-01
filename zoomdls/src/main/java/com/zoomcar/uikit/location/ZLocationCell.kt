@@ -5,7 +5,6 @@ import android.os.Parcelable
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View.OnFocusChangeListener
 import androidx.annotation.AttrRes
@@ -34,7 +33,6 @@ class ZLocationCell : ConstraintLayout {
 
         override fun afterTextChanged(s: Editable?) {
             if (binding.textPickupLocation.hasFocus() || binding.textDropOffLocation.hasFocus()) {
-                Log.d("check123", "afterTextChanged")
                 listener?.onLocationSearchTextChanged(s.toString())
             }
         }
@@ -44,7 +42,6 @@ class ZLocationCell : ConstraintLayout {
     private val locationFocusListener = OnFocusChangeListener { v, hasFocus ->
         val tag = v?.tag as LocationSearchFlowType
         if (hasFocus) {
-            Log.d("check123", "locationFocusListener set text to \"\"")
             if (tag == LocationSearchFlowType.PICKUP) {
                 binding.textPickupLocation.setText("")
                 listener?.onPickupLocationClicked()
@@ -92,7 +89,6 @@ class ZLocationCell : ConstraintLayout {
     }
 
     fun setData(model: ZLocationBarUIModel) {
-        Log.d("check123", "setLocationData " + model.toString())
         setFocusChangeListener(false)
         setTextWatchers(false)
         binding.groupOneWay.isVisible = model.type == LocationBarType.ONE_WAY
