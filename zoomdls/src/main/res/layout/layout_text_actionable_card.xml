@@ -15,8 +15,8 @@
             style="@style/OverlineSecondary"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/text_action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/text_action"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Drop-Off Location"
             android:visibility="gone"/>
@@ -28,8 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="16dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/text_action"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/text_action"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
             tools:text="Forum Centre City, Hyderali Road, Nazarbad, Mysuru, Karnataka - 570010" />
 
@@ -41,7 +41,7 @@
             android:lineSpacingExtra="2sp"
             android:textColor="@color/ever_green_06"
             android:textSize="14sp"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Change" />
     </androidx.constraintlayout.widget.ConstraintLayout>
