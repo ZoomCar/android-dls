@@ -16,8 +16,8 @@
             android:id="@+id/image_banner"
             android:layout_width="232dp"
             android:layout_height="145dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.zoomcar.uikit.textview.ZTextView
@@ -27,8 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:gravity="center_horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/image_banner"
             tools:text="No Cars Available" />
 
@@ -40,8 +40,8 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:gravity="center"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
             tools:text="Sorry, we currently don’t have cars available for pick up for the selected criteria" />
     </androidx.constraintlayout.widget.ConstraintLayout>
