@@ -33,6 +33,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/text_title"
+                android:ellipsize="end"
                 android:clickable="false"/>
 
             <com.zoomcar.uikit.textview.ZTextView
