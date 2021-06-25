@@ -119,7 +119,8 @@ class ZDisclaimerView : ConstraintLayout {
         INFO,
         WARNING,
         DEBUG,
-        ERROR;
+        ERROR,
+        SUCCESS;
 
         companion object {
             fun fromValue(type: Int) = values().first { it.ordinal == type }

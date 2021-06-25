@@ -16,8 +16,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/image_info"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/image_info"/>
 
         <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_desc"
@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             app:layout_constraintTop_toBottomOf="@+id/text_title"
-            app:layout_constraintLeft_toLeftOf="@+id/text_title"
-            app:layout_constraintRight_toLeftOf="@+id/image_info"
+            app:layout_constraintStart_toStartOf="@+id/text_title"
+            app:layout_constraintEnd_toStartOf="@+id/image_info"
             tools:text="The car I was looking for isn’t listed here The car I was looking for isn’t listed here" />
 
         <com.zoomcar.uikit.textview.ZTextView
@@ -36,14 +36,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Notify Me"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="@+id/image_info"/>
 
         <com.zoomcar.uikit.imageview.ZImageView
             android:layout_width="104dp"
             android:layout_height="104dp"
             android:id="@+id/image_info"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

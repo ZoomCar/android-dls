@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import androidx.annotation.AttrRes
 import androidx.appcompat.widget.AppCompatTextView
 
-class ZTextView : AppCompatTextView {
+open class ZTextView : AppCompatTextView {
     constructor(context: Context) : super(context)
 
     constructor(context: Context,

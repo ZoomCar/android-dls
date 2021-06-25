@@ -12,15 +12,15 @@
             android:layout_width="0dp"
             android:layout_height="1dp"
             app:layout_constraintBottom_toBottomOf="@+id/text_tag"
-            app:layout_constraintLeft_toLeftOf="@+id/card"
-            app:layout_constraintRight_toRightOf="@+id/card"
+            app:layout_constraintStart_toStartOf="@+id/card"
+            app:layout_constraintEnd_toEndOf="@+id/card"
             app:layout_constraintTop_toTopOf="@+id/text_tag" />
 
         <com.zoomcar.uikit.materialcardview.ZMaterialCardView
             android:id="@+id/card"
             android:layout_width="match_parent"
             android:layout_height="84dp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guide"
             app:strokeColor="@color/phantom_grey_02"
             app:strokeWidth="2dp">
@@ -37,7 +37,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginBottom="4dp"
                     app:layout_constraintBottom_toTopOf="@+id/text_value"
-                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     tools:text="12 Months" />
 
                 <com.zoomcar.uikit.textview.ZTextView
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintLeft_toLeftOf="@+id/text_desc"
+                    app:layout_constraintStart_toStartOf="@+id/text_desc"
                     tools:text="₹999" />
 
                 <com.zoomcar.uikit.textview.ZTextView
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     app:layout_constraintBottom_toBottomOf="@+id/text_value"
-                    app:layout_constraintLeft_toRightOf="@+id/text_value"
+                    app:layout_constraintStart_toEndOf="@+id/text_value"
                     app:layout_constraintTop_toTopOf="@+id/text_value"
                     tools:text="₹2499" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -72,7 +72,7 @@
             android:background="@color/midnight_blue_01"
             android:padding="4dp"
             android:elevation="2dp"
-            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Popular" />
     </androidx.constraintlayout.widget.ConstraintLayout>
