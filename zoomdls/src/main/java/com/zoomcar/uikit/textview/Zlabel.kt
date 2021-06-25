@@ -3,17 +3,14 @@ package com.zoomcar.uikit.textview
 import android.content.Context
 import android.os.Parcelable
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import androidx.annotation.AttrRes
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
-import androidx.databinding.DataBindingUtil
 import com.zoomcar.uikit.disclaimer.ZDisclaimerView
+import com.zoomcar.util.UiUtil
 import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
-import com.zoomcar.zoomdls.databinding.LayoutZLabelBinding
 import kotlinx.android.parcel.Parcelize
 
 /*
@@ -22,9 +19,7 @@ import kotlinx.android.parcel.Parcelize
   * @author Shishir
   * Copyright (c) 2021 Zoomcar. All rights reserved.
 */
-class Zlabel : ConstraintLayout {
-    private var binding: LayoutZLabelBinding
-
+class Zlabel : ZTextView {
     constructor(context: Context) : super(context)
 
     constructor(
@@ -38,56 +33,55 @@ class Zlabel : ConstraintLayout {
         @AttrRes defStyleAttr: Int = 0
     ) : super(context, attrs, defStyleAttr)
 
-    init {
-        val inflater: LayoutInflater = LayoutInflater.from(context)
-        binding = DataBindingUtil.inflate(inflater, R.layout.layout_z_label, this, true)
-    }
 
     fun setData(data: ZlabelUiModel) {
         setStyle(data.status)
-        binding.root.isVisible = data.text.isValid()
-        binding.textLabel.text = data.text
+        text = data.text
+    }
+
+    init {
+        setPadding(UiUtil.dpToPixels(8, context), UiUtil.dpToPixels(4, context), UiUtil.dpToPixels(8, context), UiUtil.dpToPixels(4, context))
     }
 
     private fun setStyle(status: ZDisclaimerView.DisclaimerType?) {
         when (status) {
             ZDisclaimerView.DisclaimerType.INFO -> {
                 TextViewCompat.setTextAppearance(
-                    binding.textLabel,
+                    this,
                     R.style.CaptionTintedMidnightBlue
                 )
-                binding.textLabel.background = ContextCompat.getDrawable(
+                background = ContextCompat.getDrawable(
                     context,
                     R.drawable.background_midnightblue01_corner_radius_4dp
                 )
             }
             ZDisclaimerView.DisclaimerType.WARNING -> {
                 TextViewCompat.setTextAppearance(
-                    binding.textLabel,
+                    this,
                     R.style.CaptionTintedSunriseYellow
                 )
-                binding.textLabel.background = ContextCompat.getDrawable(
+                background = ContextCompat.getDrawable(
                     context,
                     R.drawable.background_sunrise_yellow_corner_radius_4dp
                 )
             }
             ZDisclaimerView.DisclaimerType.ERROR -> {
-                TextViewCompat.setTextAppearance(binding.textLabel, R.style.CaptionTintedFireRed)
-                binding.textLabel.background = ContextCompat.getDrawable(
+                TextViewCompat.setTextAppearance(this, R.style.CaptionTintedFireRed)
+                background = ContextCompat.getDrawable(
                     context,
                     R.drawable.background_fire_red_corner_radius_4dp
                 )
             }
             ZDisclaimerView.DisclaimerType.SUCCESS -> {
-                TextViewCompat.setTextAppearance(binding.textLabel, R.style.CaptionTintedEvergreen)
-                binding.textLabel.background = ContextCompat.getDrawable(
+                TextViewCompat.setTextAppearance(this, R.style.CaptionTintedEvergreen)
+                background = ContextCompat.getDrawable(
                     context,
                     R.drawable.background_evergreen_corner_radius_4dp
                 )
             }
             else -> {
-                TextViewCompat.setTextAppearance(binding.textLabel, R.style.OverlineSecondary)
-                binding.textLabel.background = ContextCompat.getDrawable(
+                TextViewCompat.setTextAppearance(this, R.style.OverlineSecondary)
+                background = ContextCompat.getDrawable(
                     context,
                     R.drawable.background_zoom_grey_corner_radius_4dp
                 )
