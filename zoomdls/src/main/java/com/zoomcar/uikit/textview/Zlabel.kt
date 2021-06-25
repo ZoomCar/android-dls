@@ -7,9 +7,11 @@ import android.view.LayoutInflater
 import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
 import androidx.databinding.DataBindingUtil
 import com.zoomcar.uikit.disclaimer.ZDisclaimerView
+import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZLabelBinding
 import kotlinx.android.parcel.Parcelize
@@ -43,6 +45,7 @@ class Zlabel : ConstraintLayout {
 
     fun setData(data: ZlabelUiModel) {
         setStyle(data.status)
+        binding.root.isVisible = data.text.isValid()
         binding.textLabel.text = data.text
     }
 
