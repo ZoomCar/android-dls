@@ -75,6 +75,13 @@ class Zlabel : ConstraintLayout {
                     R.drawable.background_fire_red_corner_radius_4dp
                 )
             }
+            ZDisclaimerView.DisclaimerType.SUCCESS -> {
+                TextViewCompat.setTextAppearance(binding.textLabel, R.style.CaptionTintedEvergreen)
+                binding.textLabel.background = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.background_evergreen_corner_radius_4dp
+                )
+            }
             else -> {
                 TextViewCompat.setTextAppearance(binding.textLabel, R.style.OverlineSecondary)
                 binding.textLabel.background = ContextCompat.getDrawable(
