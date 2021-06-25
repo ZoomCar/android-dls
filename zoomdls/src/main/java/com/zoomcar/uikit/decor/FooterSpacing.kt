@@ -5,5 +5,6 @@ package com.zoomcar.uikit.decor
   * @project Zoomcar
   * @author Shishir
   * Copyright (c) 2021 Zoomcar. All rights reserved.
-*/interface FooterSpacing {
+*/
+interface FooterSpacing {
 }
