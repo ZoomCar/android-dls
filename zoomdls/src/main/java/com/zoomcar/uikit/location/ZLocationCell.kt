@@ -32,8 +32,10 @@ class ZLocationCell : ConstraintLayout {
         }
 
         override fun afterTextChanged(s: Editable?) {
-            if (binding.textPickupLocation.hasFocus() || binding.textDropOffLocation.hasFocus()) {
-                listener?.onLocationSearchTextChanged(s.toString())
+            if (binding.textPickupLocation.hasFocus()) {
+                listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.PICKUP)
+            } else if (binding.textDropOffLocation.hasFocus()) {
+                listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.DROP_OFF)
             }
         }
 
@@ -43,13 +45,19 @@ class ZLocationCell : ConstraintLayout {
         val tag = v?.tag as LocationSearchFlowType
         if (hasFocus) {
             if (tag == LocationSearchFlowType.PICKUP) {
+                binding.textPickupLocation.addTextChangedListener(locationChangeListener)
                 binding.textPickupLocation.setText("")
-                listener?.onPickupLocationClicked()
             } else {
+                binding.textDropOffLocation.addTextChangedListener(locationChangeListener)
                 binding.textDropOffLocation.setText("")
-                listener?.onDropOffLocationClicked()
             }
 
+        } else {
+            if (tag == LocationSearchFlowType.PICKUP) {
+                binding.textPickupLocation.removeTextChangedListener(locationChangeListener)
+            } else {
+                binding.textDropOffLocation.removeTextChangedListener(locationChangeListener)
+            }
         }
     }
 
@@ -103,7 +111,6 @@ class ZLocationCell : ConstraintLayout {
             hint = model.dropOffHint
         }
         setFocusChangeListener(true)
-        setTextWatchers(true)
     }
 
     fun selectLocationFlow(flow: LocationSearchFlowType) {
@@ -142,6 +149,6 @@ class ZLocationCell : ConstraintLayout {
     interface IZLocationBarListener {
         fun onPickupLocationClicked()
         fun onDropOffLocationClicked()
-        fun onLocationSearchTextChanged(text: String)
+        fun onLocationSearchTextChanged(text: String, type: LocationSearchFlowType)
     }
 }
