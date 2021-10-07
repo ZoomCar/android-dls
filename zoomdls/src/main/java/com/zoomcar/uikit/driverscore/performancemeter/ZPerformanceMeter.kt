@@ -117,7 +117,10 @@ class ZPerformanceMeter @JvmOverloads constructor(
                     }
                 }
 
-                rankScalePaint.color = ContextCompat.getColor(context, item.color!!)
+                // Change the color of the rankScalePaint according to range's color.
+                item.color?.let {
+                    rankScalePaint.color = ContextCompat.getColor(context, it)
+                }
 
                 // Round the corners if either first or last elements.
                 if (index == 0 || index == data?.rankScales?.lastIndex) {
@@ -159,6 +162,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
             val pointerY = marginTopForPointer
             canvas.translate(pointerX, pointerY)
 
+            // Draw the pointer on scale.
             data?.pointerDrawableRes?.let {
                 val pointerDrawable = ContextCompat.getDrawable(context, it)
 
