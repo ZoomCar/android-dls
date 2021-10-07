@@ -4,6 +4,7 @@ import android.content.Context
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.View
+import com.zoomcar.zoomdls.R
 import kotlinx.android.parcel.Parcelize
 
 /**
@@ -13,8 +14,11 @@ import kotlinx.android.parcel.Parcelize
 class PerformanceMeter @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
-
-
+    private val marginTopBottomForMeter = context.resources.getDimension(R.dimen.meter_top_bottom_margin)
+    private val marginTopForPointer = context.resources.getDimension(R.dimen.meter_top_margin_for_pointer)
+    private val pointerSize = context.resources.getDimensionPixelSize(R.dimen.meter_pointer_size)
+    private val barMeterHeight = context.resources.getDimension(R.dimen.bar_meter_height)
+    private val cornerRadius = context.resources.getDimension(R.dimen.meter_corner_radius)
 }
 
 
