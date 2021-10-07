@@ -7,6 +7,7 @@ data class RankScale(
     var low: Int? = null,
     var high: Int? = null,
     @ColorRes var color: Int? = null,
+    @ColorRes var pointerColor: Int? = R.color.phantom_grey_08,
     var category: String? = null,
     var text: String? = null,
 ) {
@@ -16,18 +17,21 @@ data class RankScale(
                 low = 0,
                 high = 20,
                 color = R.color.fire_red_06,
+                pointerColor = R.color.fire_red_06,
                 category = ScoreCategoryType.BAD.category
             ),
             RankScale(
                 low = 20,
                 high = 80,
                 color = R.color.sunrise_yellow_04,
+                pointerColor = R.color.sunrise_yellow_04,
                 category = ScoreCategoryType.AVERAGE.category
             ),
             RankScale(
                 low = 80,
                 high = 100,
                 color = R.color.ever_green_06,
+                pointerColor = R.color.ever_green_06,
                 category = ScoreCategoryType.GOOD.category
             )
         )
