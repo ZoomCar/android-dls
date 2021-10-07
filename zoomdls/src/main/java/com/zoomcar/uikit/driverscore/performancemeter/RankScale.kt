@@ -4,8 +4,8 @@ import androidx.annotation.ColorRes
 import com.zoomcar.zoomdls.R
 
 data class RankScale(
-    var low: Int? = null,
-    var high: Int? = null,
+    var low: Int,
+    var high: Int,
     @ColorRes var color: Int? = null,
     @ColorRes var pointerColor: Int? = R.color.phantom_grey_08,
     var category: String? = null,
