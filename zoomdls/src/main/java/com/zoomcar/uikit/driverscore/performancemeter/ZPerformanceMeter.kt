@@ -1,4 +1,4 @@
-package com.zoomcar.uikit.driverscore
+package com.zoomcar.uikit.driverscore.performancemeter
 
 import android.content.Context
 import android.graphics.Canvas
@@ -15,14 +15,21 @@ import com.zoomcar.util.getNullCheck
 import com.zoomcar.zoomdls.R
 
 /**
- * Originally authored by Shishir.
- * Modified by Gideon Paul.
+ * Performance meter custom view to display driver score.
+ *
+ * @created 07/10/2021 - 1:00 PM
+ * @project Zoomcar
+ * @author Shishir
+ * @author Gideon Paul
+ * Copyright (c) 2021 Zoomcar. All rights reserved.
  */
-class PerformanceMeter @JvmOverloads constructor(
+// Originally authored by Shishir.
+//Moved to DLS by Gideon Paul.
+class ZPerformanceMeter @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
-    private var data: ZMeterUIModel? = null
+    private var data: ZPerformanceMeterUIModel? = null
 
     private var path: Path = Path()
     private val pointerDrawable = ContextCompat.getDrawable(context, R.drawable.ic_chevron_down)
@@ -83,7 +90,7 @@ class PerformanceMeter @JvmOverloads constructor(
             textSize = context.resources.getDimension(R.dimen.performance_meter_label_text_size)
         }
 
-    fun setData(data: ZMeterUIModel?) {
+    fun setData(data: ZPerformanceMeterUIModel?) {
         data?.let {
             this.data = data
             this.isVisible = data.items.getNullCheck()
@@ -169,7 +176,7 @@ class PerformanceMeter @JvmOverloads constructor(
                 }
             }
 
-            //add pointer for score
+            // Add pointer for score
             val pointerX = width * ((data?.score ?: 0) * 1.0f / 100.0f) - pointerSize / 2
             val pointerY = marginTopForPointer
             canvas.translate(pointerX, pointerY)
@@ -209,17 +216,3 @@ class PerformanceMeter @JvmOverloads constructor(
         } ?: return ContextCompat.getColor(context, R.color.phantom_grey_08)
     }
 }
-
-// Value objects.
-data class RankScaleVO(
-    var low: Int? = null,
-    var high: Int? = null,
-    var category: String? = null,
-    var text: String? = null,
-)
-
-data class ZMeterUIModel(
-    val items: List<RankScaleVO>? = null,
-    val score: Int,
-    val category: DriverScoreCategoryType,
-)
