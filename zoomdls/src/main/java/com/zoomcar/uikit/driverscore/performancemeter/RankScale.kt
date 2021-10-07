@@ -1,6 +1,6 @@
 package com.zoomcar.uikit.driverscore.performancemeter
 
-data class RankScaleVO(
+data class RankScale(
     var low: Int? = null,
     var high: Int? = null,
     var category: String? = null,
@@ -8,17 +8,17 @@ data class RankScaleVO(
 ) {
     companion object {
         val defaultRankScales = listOf(
-            RankScaleVO(
+            RankScale(
                 low = 0,
                 high = 20,
                 category = ScoreCategoryType.BAD.category
             ),
-            RankScaleVO(
+            RankScale(
                 low = 20,
                 high = 80,
                 category = ScoreCategoryType.AVERAGE.category
             ),
-            RankScaleVO(
+            RankScale(
                 low = 80,
                 high = 100,
                 category = ScoreCategoryType.GOOD.category
