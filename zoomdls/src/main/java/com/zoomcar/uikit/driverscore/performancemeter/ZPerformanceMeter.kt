@@ -32,7 +32,6 @@ class ZPerformanceMeter @JvmOverloads constructor(
     private var data: ZPerformanceMeterUIModel? = null
 
     private var path: Path = Path()
-    private val pointerDrawable = ContextCompat.getDrawable(context, R.drawable.ic_chevron_down)
 
     private val marginTopBottomForMeter =
         context.resources.getDimension(R.dimen.meter_top_bottom_margin)
@@ -126,14 +125,14 @@ class ZPerformanceMeter @JvmOverloads constructor(
 
                 when (index) {
                     0 -> {
-                        //path drawn considering curved edges
+                        // Path drawn considering curved edges.
                         path.moveTo(right, top)
                         path.lineTo(left, top)
                         path.lineTo(left, bottom)
                         path.lineTo(right, bottom)
                     }
                     (data?.items?.size ?: 0) - 1 -> {
-                        //path drawn considering curved edges
+                        // Path drawn considering curved edges.
                         path.moveTo(left, top)
                         path.lineTo(right, top)
                         path.lineTo(right, bottom)
@@ -150,12 +149,12 @@ class ZPerformanceMeter @JvmOverloads constructor(
                 val paint = getPaintForCategory(item.category)
                 canvas.drawPath(path, paint)
 
-                //add labels inside bars
+                // Add labels inside bars.
                 var xPos = (left + right) / 2
                 var yPos = ((top + bottom) / 2) - (textPaint.descent() + textPaint.ascent()) / 2
                 canvas.drawText(item.text ?: "", xPos, yPos, textPaint)
 
-                //add labels below bar
+                // Add labels below bar.
                 yPos = bottom + barMeterHeight * 3 / 5
                 if (index == 0) {
                     xPos = left + 2
@@ -176,16 +175,21 @@ class ZPerformanceMeter @JvmOverloads constructor(
                 }
             }
 
-            // Add pointer for score
+            // Add pointer for score.
             val pointerX = width * ((data?.score ?: 0) * 1.0f / 100.0f) - pointerSize / 2
             val pointerY = marginTopForPointer
             canvas.translate(pointerX, pointerY)
-            pointerDrawable?.apply {
-                setBounds(0, 0, pointerSize, pointerSize)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    setTint(getDriverScoreColor(context, data?.category))
+
+            data?.pointerDrawableRes?.let {
+                val pointerDrawable = ContextCompat.getDrawable(context, it)
+
+                pointerDrawable?.apply {
+                    setBounds(0, 0, pointerSize, pointerSize)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        setTint(getDriverScoreColor(context, data?.category))
+                    }
+                    draw(canvas)
                 }
-                draw(canvas)
             }
             super.onDraw(canvas)
         }
