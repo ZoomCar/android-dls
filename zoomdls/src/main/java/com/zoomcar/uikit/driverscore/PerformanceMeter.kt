@@ -85,6 +85,15 @@ class PerformanceMeter @JvmOverloads constructor(
             invalidate()
         }
     }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        val lp = layoutParams.apply {
+            height = context.resources.getDimensionPixelSize(R.dimen.performance_meter_height)
+        }
+        layoutParams = lp
+        setWillNotDraw(false)
+    }
 }
 
 
