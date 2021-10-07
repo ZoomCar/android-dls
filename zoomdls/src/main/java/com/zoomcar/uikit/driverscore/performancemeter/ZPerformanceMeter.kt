@@ -108,9 +108,9 @@ class ZPerformanceMeter @JvmOverloads constructor(
     }
 
     private fun getPaintForCategory(category: String?): Paint {
-        return when (DriverScoreCategoryType.fromType(category)) {
-            DriverScoreCategoryType.GOOD -> greenPaint
-            DriverScoreCategoryType.AVERAGE -> orangePaint
+        return when (ScoreCategoryType.fromType(category)) {
+            ScoreCategoryType.GOOD -> greenPaint
+            ScoreCategoryType.AVERAGE -> orangePaint
             else -> redPaint
         }
     }
@@ -192,23 +192,23 @@ class ZPerformanceMeter @JvmOverloads constructor(
     }
 
     /**
-     * @param categoryType Enum value [DriverScoreCategoryType]
+     * @param categoryType Enum value [ScoreCategoryType]
      * @return color int resource
      */
     @ColorInt
-    private fun getDriverScoreColor(context: Context, categoryType: DriverScoreCategoryType?): Int {
+    private fun getDriverScoreColor(context: Context, categoryType: ScoreCategoryType?): Int {
         categoryType?.let {
             return when (categoryType) {
-                DriverScoreCategoryType.GOOD -> ContextCompat.getColor(
+                ScoreCategoryType.GOOD -> ContextCompat.getColor(
                     context,
                     R.color.ever_green_06
                 )
-                DriverScoreCategoryType.AVERAGE -> ContextCompat.getColor(
+                ScoreCategoryType.AVERAGE -> ContextCompat.getColor(
                     context,
                     R.color.sunrise_yellow_04
                 )
-                DriverScoreCategoryType.BAD -> ContextCompat.getColor(context, R.color.fire_red_06)
-                DriverScoreCategoryType.UNKNOWN -> ContextCompat.getColor(
+                ScoreCategoryType.BAD -> ContextCompat.getColor(context, R.color.fire_red_06)
+                ScoreCategoryType.UNKNOWN -> ContextCompat.getColor(
                     context,
                     R.color.phantom_grey_08
                 )

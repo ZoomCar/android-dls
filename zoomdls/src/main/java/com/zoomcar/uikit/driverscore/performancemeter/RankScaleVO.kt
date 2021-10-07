@@ -11,17 +11,17 @@ data class RankScaleVO(
             RankScaleVO(
                 low = 0,
                 high = 20,
-                category = DriverScoreCategoryType.BAD.category
+                category = ScoreCategoryType.BAD.category
             ),
             RankScaleVO(
                 low = 20,
                 high = 80,
-                category = DriverScoreCategoryType.AVERAGE.category
+                category = ScoreCategoryType.AVERAGE.category
             ),
             RankScaleVO(
                 low = 80,
                 high = 100,
-                category = DriverScoreCategoryType.GOOD.category
+                category = ScoreCategoryType.GOOD.category
             )
         )
     }

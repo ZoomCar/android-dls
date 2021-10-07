@@ -1,6 +1,6 @@
 package com.zoomcar.uikit.driverscore.performancemeter
 
-enum class DriverScoreCategoryType(val category: String) {
+enum class ScoreCategoryType(val category: String) {
     GOOD("good"),
     AVERAGE("average"),
     BAD("bad"),
