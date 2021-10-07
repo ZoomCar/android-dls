@@ -94,6 +94,14 @@ class PerformanceMeter @JvmOverloads constructor(
         layoutParams = lp
         setWillNotDraw(false)
     }
+
+    private fun getPaintForCategory(category: String?): Paint {
+        return when (DriverScoreCategoryType.fromType(category)) {
+            DriverScoreCategoryType.GOOD -> greenPaint
+            DriverScoreCategoryType.AVERAGE -> orangePaint
+            else -> redPaint
+        }
+    }
 }
 
 
