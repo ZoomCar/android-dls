@@ -92,7 +92,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
     fun setData(data: ZPerformanceMeterUIModel?) {
         data?.let {
             this.data = data
-            this.isVisible = data.items.getNullCheck()
+            this.isVisible = data.rankScales.getNullCheck()
             invalidate()
         }
     }
@@ -116,7 +116,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         canvas?.let { canvas ->
-            data?.items?.mapIndexed { index, item ->
+            data?.rankScales?.mapIndexed { index, item ->
                 val top = marginTopBottomForMeter
                 val bottom = barMeterHeight + marginTopBottomForMeter
                 val left = (item.low ?: 0) * 1.0f / 100.0f * measuredWidth.toFloat()
@@ -131,7 +131,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                         path.lineTo(left, bottom)
                         path.lineTo(right, bottom)
                     }
-                    (data?.items?.size ?: 0) - 1 -> {
+                    (data?.rankScales?.size ?: 0) - 1 -> {
                         // Path drawn considering curved edges.
                         path.moveTo(left, top)
                         path.lineTo(right, top)
@@ -162,7 +162,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                         textAlign = Paint.Align.LEFT
                     })
                 }
-                if (index == (data?.items?.size ?: 0) - 1) {
+                if (index == (data?.rankScales?.size ?: 0) - 1) {
                     xPos = right - 2
                     canvas.drawText(item.high.toString(), xPos, yPos, labelPaint.apply {
                         textAlign = Paint.Align.RIGHT

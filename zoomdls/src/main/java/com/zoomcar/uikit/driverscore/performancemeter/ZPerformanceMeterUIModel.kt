@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import com.zoomcar.zoomdls.R
 
 data class ZPerformanceMeterUIModel(
-    val items: List<RankScale>? = RankScale.defaultRankScales,
+    val rankScales: List<RankScale> = RankScale.defaultRankScales,
     val score: Int,
     @DrawableRes val pointerDrawableRes: Int? = R.drawable.ic_chevron_down,
     val category: ScoreCategoryType = ScoreCategoryType.UNKNOWN,
