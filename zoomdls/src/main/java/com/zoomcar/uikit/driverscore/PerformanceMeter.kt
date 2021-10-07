@@ -7,6 +7,8 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
+import com.zoomcar.util.getNullCheck
 import com.zoomcar.zoomdls.R
 import kotlinx.android.parcel.Parcelize
 
@@ -17,6 +19,9 @@ import kotlinx.android.parcel.Parcelize
 class PerformanceMeter @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
+
+    private var data: ZMeterUIModel? = null
+
     private val marginTopBottomForMeter =
         context.resources.getDimension(R.dimen.meter_top_bottom_margin)
     private val marginTopForPointer =
@@ -72,6 +77,14 @@ class PerformanceMeter @JvmOverloads constructor(
             textAlign = Paint.Align.CENTER
             textSize = context.resources.getDimension(R.dimen.performance_meter_label_text_size)
         }
+
+    fun setData(data: ZMeterUIModel?) {
+        data?.let {
+            this.data = data
+            this.isVisible = data.items.getNullCheck()
+            invalidate()
+        }
+    }
 }
 
 
