@@ -168,9 +168,15 @@ class ZPerformanceMeter @JvmOverloads constructor(
 
                 pointerDrawable?.apply {
                     setBounds(0, 0, pointerSize, pointerSize)
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                        setTint(getDriverScoreColor(context, data?.category))
+
+                    if (data?.tintPointer == true) {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                            data?.score?.let { score ->
+                                setTint(ContextCompat.getColor(context, getTintFromScore(score)))
+                            }
+                        }
                     }
+
                     draw(canvas)
                 }
             }
@@ -178,28 +184,17 @@ class ZPerformanceMeter @JvmOverloads constructor(
         }
     }
 
-    /**
-     * @param categoryType Enum value [ScoreCategoryType]
-     * @return color int resource
-     */
-    @ColorInt
-    private fun getDriverScoreColor(context: Context, categoryType: ScoreCategoryType?): Int {
-        categoryType?.let {
-            return when (categoryType) {
-                ScoreCategoryType.GOOD -> ContextCompat.getColor(
-                    context,
-                    R.color.ever_green_06
-                )
-                ScoreCategoryType.AVERAGE -> ContextCompat.getColor(
-                    context,
-                    R.color.sunrise_yellow_04
-                )
-                ScoreCategoryType.BAD -> ContextCompat.getColor(context, R.color.fire_red_06)
-                ScoreCategoryType.UNKNOWN -> ContextCompat.getColor(
-                    context,
-                    R.color.phantom_grey_08
-                )
+    private fun getTintFromScore(score: Int): Int {
+        data?.rankScales?.let { rankScales ->
+            for (rankScale in rankScales) {
+                if (score >= rankScale.low && score <= rankScale.high) {
+                    rankScale.color?.let { color ->
+                        println("Found the color $color")
+                        return color
+                    }
+                }
             }
-        } ?: return ContextCompat.getColor(context, R.color.phantom_grey_08)
+        }
+        return R.color.phantom_grey_08
     }
 }
