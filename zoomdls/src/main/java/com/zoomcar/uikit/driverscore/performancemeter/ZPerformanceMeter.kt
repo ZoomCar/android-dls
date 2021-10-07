@@ -43,32 +43,11 @@ class ZPerformanceMeter @JvmOverloads constructor(
 
     private val cornerEffect = CornerPathEffect(cornerRadius)
 
-    // Red paint for bad category
-    private val redPaint =
+    // Paint for filling ranges inside colored bar.
+    private val rankScalePaint =
         Paint().apply {
             isAntiAlias = true
-            color = ContextCompat.getColor(context, R.color.fire_red_06)
             style = Paint.Style.FILL
-            //added for curved edges
-            pathEffect = cornerEffect;
-        }
-
-    // Orange paint for average category
-    private val orangePaint =
-        Paint().apply {
-            isAntiAlias = true
-            color = ContextCompat.getColor(context, R.color.sunrise_yellow_04)
-            style = Paint.Style.FILL
-        }
-
-    // Green paint for good category
-    private val greenPaint =
-        Paint().apply {
-            isAntiAlias = true
-            color = ContextCompat.getColor(context, R.color.ever_green_06)
-            style = Paint.Style.FILL
-            //added for curved edges
-            pathEffect = cornerEffect;
         }
 
     // Paint for text inside the colored bar
@@ -106,14 +85,6 @@ class ZPerformanceMeter @JvmOverloads constructor(
         setWillNotDraw(false)
     }
 
-    private fun getPaintForCategory(category: String?): Paint {
-        return when (ScoreCategoryType.fromType(category)) {
-            ScoreCategoryType.GOOD -> greenPaint
-            ScoreCategoryType.AVERAGE -> orangePaint
-            else -> redPaint
-        }
-    }
-
     override fun onDraw(canvas: Canvas?) {
         canvas?.let { canvas ->
             data?.rankScales?.mapIndexed { index, item ->
@@ -146,8 +117,16 @@ class ZPerformanceMeter @JvmOverloads constructor(
                     }
                 }
 
-                val paint = getPaintForCategory(item.category)
-                canvas.drawPath(path, paint)
+                rankScalePaint.color = ContextCompat.getColor(context, item.color!!)
+
+                // Round the corners if either first or last elements.
+                if (index == 0 || index == data?.rankScales?.lastIndex) {
+                    rankScalePaint.pathEffect = cornerEffect
+                } else {
+                    rankScalePaint.pathEffect = null
+                }
+
+                canvas.drawPath(path, rankScalePaint)
 
                 // Add labels inside bars.
                 var xPos = (left + right) / 2
