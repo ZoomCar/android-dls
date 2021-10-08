@@ -17,7 +17,8 @@ import com.zoomcar.util.getNullCheck
 import com.zoomcar.zoomdls.R
 
 /**
- * Performance meter custom view to display driver score.
+ * Performance meter custom view.
+ * Can display scores ranging from 0 to 100.
  *
  * @created 07/10/2021 - 1:00 PM
  * @project Zoomcar
@@ -137,7 +138,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                 // Add labels inside bars.
                 var xPos = (left + right) / 2
                 var yPos = ((top + bottom) / 2) - (textPaint.descent() + textPaint.ascent()) / 2
-                canvas.drawText(item.text ?: "", xPos, yPos, textPaint)
+                canvas.drawText(item.label ?: "", xPos, yPos, textPaint)
 
                 // Add labels below bar.
                 yPos = bottom + barMeterHeight * 3 / 5
@@ -204,7 +205,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
         }
     }
 
-    private fun scoreFallsInRange(score: Int, performanceMeterRange: PerformanceMeterRange): Boolean {
+    private fun scoreFallsInRange(score: Int, performanceMeterRange: ZPerformanceMeterRange): Boolean {
         return (score >= performanceMeterRange.low && score <= performanceMeterRange.high)
     }
 }
