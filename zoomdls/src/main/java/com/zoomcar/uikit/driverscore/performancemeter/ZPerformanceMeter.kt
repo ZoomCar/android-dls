@@ -189,7 +189,6 @@ class ZPerformanceMeter @JvmOverloads constructor(
             for (rankScale in rankScales) {
                 if (score >= rankScale.low && score <= rankScale.high) {
                     rankScale.color?.let { color ->
-                        println("Found the color $color")
                         return color
                     }
                 }
