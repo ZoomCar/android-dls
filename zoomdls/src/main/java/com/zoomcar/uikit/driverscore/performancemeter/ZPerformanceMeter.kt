@@ -5,9 +5,12 @@ import android.graphics.Canvas
 import android.graphics.CornerPathEffect
 import android.graphics.Paint
 import android.graphics.Path
+import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.zoomcar.util.getNullCheck
@@ -161,38 +164,46 @@ class ZPerformanceMeter @JvmOverloads constructor(
             val pointerY = marginTopForPointer
             canvas.translate(pointerX, pointerY)
 
-            // Draw the pointer on scale.
-            data?.pointerDrawableRes?.let {
-                val pointerDrawable = ContextCompat.getDrawable(context, it)
-
-                pointerDrawable?.apply {
-                    setBounds(0, 0, pointerSize, pointerSize)
-
-                    if (data?.tintPointer == true) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                            data?.score?.let { score ->
-                                setTint(ContextCompat.getColor(context, getTintFromScore(score)))
-                            }
+            data?.rankScales?.forEach { rankScale ->
+                data?.score?.let { score ->
+                    if (scoreFallsInRange(score, rankScale)) {
+                        rankScale.pointerImage?.let {
+                            drawPointer(canvas, it, rankScale.pointerColor)
                         }
                     }
-
-                    draw(canvas)
                 }
             }
             super.onDraw(canvas)
         }
     }
 
-    private fun getTintFromScore(score: Int): Int {
-        data?.rankScales?.let { rankScales ->
-            for (rankScale in rankScales) {
-                if (score >= rankScale.low && score <= rankScale.high) {
-                    rankScale.scaleColor?.let { color ->
-                        return color
-                    }
-                }
+    private fun drawPointer(
+        canvas: Canvas,
+        @DrawableRes pointerDrawableRes: Int,
+        @ColorRes tint: Int?
+    ) {
+        val pointerDrawable = ContextCompat.getDrawable(context, pointerDrawableRes)
+        pointerDrawable?.apply {
+            setBounds(0, 0, pointerSize, pointerSize)
+            tint?.let {
+                setTintToDrawable(this, tint)
             }
+            draw(canvas)
         }
-        return R.color.phantom_grey_08
+    }
+
+    private fun setTintToDrawable(pointer: Drawable, pointerColor: Int) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            pointer.setTint(
+                ContextCompat.getColor(
+                    context,
+                    pointerColor
+                )
+            )
+        }
+    }
+
+    private fun scoreFallsInRange(score: Int, rankScale: RankScale): Boolean {
+        return (score >= rankScale.low && score <= rankScale.high)
     }
 }
