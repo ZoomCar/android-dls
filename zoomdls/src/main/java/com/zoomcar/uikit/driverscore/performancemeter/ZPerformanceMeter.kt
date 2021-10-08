@@ -8,7 +8,6 @@ import android.graphics.Path
 import android.os.Build
 import android.util.AttributeSet
 import android.view.View
-import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.zoomcar.util.getNullCheck
@@ -118,7 +117,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                 }
 
                 // Change the color of the rankScalePaint according to range's color.
-                item.color?.let {
+                item.scaleColor?.let {
                     rankScalePaint.color = ContextCompat.getColor(context, it)
                 }
 
@@ -188,7 +187,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
         data?.rankScales?.let { rankScales ->
             for (rankScale in rankScales) {
                 if (score >= rankScale.low && score <= rankScale.high) {
-                    rankScale.color?.let { color ->
+                    rankScale.scaleColor?.let { color ->
                         return color
                     }
                 }
