@@ -1,4 +1,4 @@
-package com.zoomcar.uikit.driverscore.performancemeter
+package com.zoomcar.uikit.performancemeter
 
 import android.content.Context
 import android.graphics.Canvas

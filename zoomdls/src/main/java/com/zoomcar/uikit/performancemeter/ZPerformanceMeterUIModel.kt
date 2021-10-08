@@ -1,4 +1,4 @@
-package com.zoomcar.uikit.driverscore.performancemeter
+package com.zoomcar.uikit.performancemeter
 
 /**
  * UI model for performance meter.
