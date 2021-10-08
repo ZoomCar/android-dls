@@ -10,7 +10,6 @@ data class RankScale(
     @ColorRes var scaleColor: Int? = null,
     @DrawableRes var pointerImage: Int? = R.drawable.ic_chevron_down,
     @ColorRes var pointerColor: Int? = R.color.phantom_grey_08,
-    var category: String? = null,
     var text: String? = null,
 ) {
     companion object {
@@ -20,21 +19,18 @@ data class RankScale(
                 high = 20,
                 scaleColor = R.color.fire_red_06,
                 pointerColor = R.color.fire_red_06,
-                category = ScoreCategoryType.BAD.category
             ),
             RankScale(
                 low = 20,
                 high = 80,
                 scaleColor = R.color.sunrise_yellow_04,
                 pointerColor = R.color.sunrise_yellow_04,
-                category = ScoreCategoryType.AVERAGE.category
             ),
             RankScale(
                 low = 80,
                 high = 100,
                 scaleColor = R.color.ever_green_06,
                 pointerColor = R.color.ever_green_06,
-                category = ScoreCategoryType.GOOD.category
             )
         )
     }
