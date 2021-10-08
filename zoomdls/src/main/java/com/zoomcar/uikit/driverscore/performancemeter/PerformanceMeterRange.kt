@@ -4,7 +4,7 @@ import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import com.zoomcar.zoomdls.R
 
-data class RankScale(
+data class PerformanceMeterRange(
     var low: Int,
     var high: Int,
     @ColorRes var scaleColor: Int? = null,
@@ -13,20 +13,20 @@ data class RankScale(
     var text: String? = null,
 ) {
     companion object {
-        val defaultRankScales = listOf(
-            RankScale(
+        val defaultRanges = listOf(
+            PerformanceMeterRange(
                 low = 0,
                 high = 20,
                 scaleColor = R.color.fire_red_06,
                 pointerColor = R.color.fire_red_06,
             ),
-            RankScale(
+            PerformanceMeterRange(
                 low = 20,
                 high = 80,
                 scaleColor = R.color.sunrise_yellow_04,
                 pointerColor = R.color.sunrise_yellow_04,
             ),
-            RankScale(
+            PerformanceMeterRange(
                 low = 80,
                 high = 100,
                 scaleColor = R.color.ever_green_06,

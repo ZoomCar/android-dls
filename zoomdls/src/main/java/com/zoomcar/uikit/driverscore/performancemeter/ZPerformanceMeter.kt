@@ -74,7 +74,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
     fun setData(data: ZPerformanceMeterUIModel?) {
         data?.let {
             this.data = data
-            this.isVisible = data.rankScales.getNullCheck()
+            this.isVisible = data.performanceMeterRanges.getNullCheck()
             invalidate()
         }
     }
@@ -90,7 +90,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas?) {
         canvas?.let { canvas ->
-            data?.rankScales?.mapIndexed { index, item ->
+            data?.performanceMeterRanges?.mapIndexed { index, item ->
                 val top = marginTopBottomForMeter
                 val bottom = barMeterHeight + marginTopBottomForMeter
                 val left = (item.low ?: 0) * 1.0f / 100.0f * measuredWidth.toFloat()
@@ -105,7 +105,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                         path.lineTo(left, bottom)
                         path.lineTo(right, bottom)
                     }
-                    (data?.rankScales?.size ?: 0) - 1 -> {
+                    (data?.performanceMeterRanges?.size ?: 0) - 1 -> {
                         // Path drawn considering curved edges.
                         path.moveTo(left, top)
                         path.lineTo(right, top)
@@ -126,7 +126,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                 }
 
                 // Round the corners if either first or last elements.
-                if (index == 0 || index == data?.rankScales?.lastIndex) {
+                if (index == 0 || index == data?.performanceMeterRanges?.lastIndex) {
                     rankScalePaint.pathEffect = cornerEffect
                 } else {
                     rankScalePaint.pathEffect = null
@@ -147,7 +147,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
                         textAlign = Paint.Align.LEFT
                     })
                 }
-                if (index == (data?.rankScales?.size ?: 0) - 1) {
+                if (index == (data?.performanceMeterRanges?.size ?: 0) - 1) {
                     xPos = right - 2
                     canvas.drawText(item.high.toString(), xPos, yPos, labelPaint.apply {
                         textAlign = Paint.Align.RIGHT
@@ -165,7 +165,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
             val pointerY = marginTopForPointer
             canvas.translate(pointerX, pointerY)
 
-            data?.rankScales?.forEach { rankScale ->
+            data?.performanceMeterRanges?.forEach { rankScale ->
                 data?.score?.let { score ->
                     if (scoreFallsInRange(score, rankScale)) {
                         rankScale.pointerImage?.let {
@@ -204,7 +204,7 @@ class ZPerformanceMeter @JvmOverloads constructor(
         }
     }
 
-    private fun scoreFallsInRange(score: Int, rankScale: RankScale): Boolean {
-        return (score >= rankScale.low && score <= rankScale.high)
+    private fun scoreFallsInRange(score: Int, performanceMeterRange: PerformanceMeterRange): Boolean {
+        return (score >= performanceMeterRange.low && score <= performanceMeterRange.high)
     }
 }
