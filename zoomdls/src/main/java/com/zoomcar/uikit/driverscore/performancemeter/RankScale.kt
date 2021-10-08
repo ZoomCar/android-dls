@@ -1,12 +1,14 @@
 package com.zoomcar.uikit.driverscore.performancemeter
 
 import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
 import com.zoomcar.zoomdls.R
 
 data class RankScale(
     var low: Int,
     var high: Int,
     @ColorRes var scaleColor: Int? = null,
+    @DrawableRes var pointerImage: Int? = R.drawable.ic_chevron_down,
     @ColorRes var pointerColor: Int? = R.color.phantom_grey_08,
     var category: String? = null,
     var text: String? = null,
