@@ -56,6 +56,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
                 binding.imageType.setImageDrawable(null)
             }
         }
+        binding.imageType.isVisible = model.imageRes.getNullCheck() || model.imageUrl.isValid()
 
         when (model.type) {
             SelectionItemType.PRIMARY -> {
@@ -82,6 +83,14 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
                     TextViewCompat.setTextAppearance(this, R.style.CaptionInactive)
                 }
             }
+            SelectionItemType.SECONDARY ->{
+                binding.textTitle.apply {
+                    TextViewCompat.setTextAppearance(this, R.style.Body1Primary)
+                }
+                binding.textDesc.apply {
+                    TextViewCompat.setTextAppearance(this, R.style.CaptionInactive)
+                }
+            }
         }
         binding.textTitle.apply {
             text = model.title
@@ -102,7 +111,8 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
     enum class SelectionItemType {
         DEFAULT,
         PRIMARY,
-        HIGHLIGHTED
+        HIGHLIGHTED,
+        SECONDARY
     }
 
     @Parcelize

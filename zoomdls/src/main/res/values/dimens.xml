@@ -3,4 +3,13 @@
     <dimen name="segmented_control_divider_margin">4dp</dimen>
     <dimen name="segmented_control_selected_button_elevation">2dp</dimen>
     <dimen name="segmented_control_unselected_button_elevation">0dp</dimen>
+
+    <!--Performance meter-->
+    <dimen name="meter_top_bottom_margin">30dp</dimen>
+    <dimen name="meter_top_margin_for_pointer">0dp</dimen>
+    <dimen name="meter_corner_radius">4dp</dimen>
+    <dimen name="meter_pointer_size">28dp</dimen>
+    <dimen name="bar_meter_height">24dp</dimen>
+    <dimen name="performance_meter_height">84dp</dimen>
+    <dimen name="performance_meter_label_text_size">14sp</dimen>
 </resources>
