@@ -3,17 +3,28 @@
     <declare-styleable name="ZSelectionTextView">
         <attr name="zstv_selected" format="boolean" />
     </declare-styleable>
+
     <declare-styleable name="ZFlowTextSelectionLayout">
         <attr name="selection_type" format="enum">
-            <enum name="single" value="0"/>
-            <enum name="multi" value="1"/>
+            <enum name="single" value="0" />
+            <enum name="multi" value="1" />
         </attr>
     </declare-styleable>
+
     <declare-styleable name="ZDisclaimerView">
         <attr name="disclaimer_type" format="enum">
-            <enum name="info" value="0"/>
-            <enum name="warning" value="1"/>
-            <enum name="debug" value="2"/>
+            <enum name="info" value="0" />
+            <enum name="warning" value="1" />
+            <enum name="debug" value="2" />
         </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ArcView">
+        <attr name="av_progress_value" format="integer" />
+        <attr name="av_stroke_width" format="integer" />
+        <attr name="av_start_color" format="string" />
+        <attr name="av_end_color" format="string" />
+        <attr name="av_animation_duration" format="integer" />
+        <attr name="av_auto_animate" format="boolean" />
     </declare-styleable>
 </resources>
