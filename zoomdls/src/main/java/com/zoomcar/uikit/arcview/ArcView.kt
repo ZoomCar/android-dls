@@ -128,7 +128,7 @@ class ArcView @JvmOverloads constructor(
         fillAnimation.duration = animationDuration.toLong()
     }
 
-    private fun initCanvasObjects() {
+    fun initCanvasObjects() {
         if (areDimensionsInvalid()) {
             return
         }
