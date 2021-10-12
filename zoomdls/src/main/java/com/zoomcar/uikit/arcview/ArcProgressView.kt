@@ -35,11 +35,12 @@ class ArcProgressView @JvmOverloads constructor(
 
     init {
         LayoutInflater.from(context).inflate(R.layout.layout_arc_progress_view, this, true)
+
         arcView = findViewById(R.id.arc_view)
         progressValueTextView = findViewById(R.id.progress_value)
         subTextView = findViewById(R.id.sub_text)
 
-
+        // Extract attributes.
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ArcProgressView)
         strokeWidth = typedArray.getInt(
             R.styleable.ArcProgressView_apv_stroke_width,
@@ -62,7 +63,10 @@ class ArcProgressView @JvmOverloads constructor(
             R.styleable.ArcProgressView_apv_auto_animate,
             true
         )
+
+        // Clear memory immediately instead of waiting for garbage collection.
         typedArray.recycle()
+
         populateValueAndSubText()
     }
 
@@ -94,7 +98,7 @@ class ArcProgressView @JvmOverloads constructor(
             updateProgressValue(this@ArcProgressView.progressValue)
             updateAnimationDuration(this@ArcProgressView.animationDuration)
             initCanvasObjects()
-//            animateArc()
+            // animateArc()
         }
         return this
     }
