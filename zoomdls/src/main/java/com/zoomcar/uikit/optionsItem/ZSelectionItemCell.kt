@@ -44,7 +44,7 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
             isVisible = model.isEditable
             setOnClickListener(this@ZSelectionItemCell)
         }
-
+        binding.container.isVisible = model.textRight.isValid()
         when {
             model.imageRes.getNullCheck() -> {
                 binding.imageType.setImageResource(model.imageRes!!)
@@ -93,6 +93,10 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
             isVisible = model.desc.isValid()
             isSingleLine = model.isDescSingleLine
         }
+
+        binding.textRight.apply {
+            text = model.textRight
+        }
     }
 
     fun setListener(listener: IZSelectionItemListener) {
@@ -115,7 +119,8 @@ class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
             var isEditable: Boolean = false,
             var type: SelectionItemType,
             var isHeaderSingleLine: Boolean = false,
-            var isDescSingleLine: Boolean = false
+            var isDescSingleLine: Boolean = false,
+            var textRight : String? = null
     ): Parcelable
 
     override fun onClick(v: View?) {
