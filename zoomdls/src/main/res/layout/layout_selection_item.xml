@@ -68,11 +68,11 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/elevated_thumb">
-            <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <com.zoomcar.uikit.imageview.ZImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:baselineAlignBottom="true"
-                app:srcCompat="@drawable/ic_directions_vector_green"
+                android:id="@+id/right_image_type"
                 app:layout_constraintEnd_toStartOf="@id/text_right"
                 app:layout_constraintTop_toTopOf="parent"/>
 
