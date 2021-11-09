@@ -16,4 +16,10 @@
             <enum name="debug" value="2"/>
         </attr>
     </declare-styleable>
+    <declare-styleable name="ZChipActionButton">
+        <attr name="type" format="enum">
+            <enum name="light" value="0"/>
+            <enum name="dark" value="1"/>
+        </attr>
+    </declare-styleable>
 </resources>
