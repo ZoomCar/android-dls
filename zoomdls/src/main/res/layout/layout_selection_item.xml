@@ -4,77 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_selection_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:minHeight="62dp"
-        android:id="@+id/layout_selection_item">
+        android:padding="16dp">
+
         <com.zoomcar.uikit.imageview.ZImageView
+            android:id="@+id/image_type"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:id="@+id/image_type"
+            android:clickable="false"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:clickable="false"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@+id/image_type"
-            app:layout_constraintEnd_toStartOf="@+id/text_edit"
-            app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="16dp">
+            app:layout_constraintEnd_toStartOf="@+id/barrier"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/image_type"
+            app:layout_constraintTop_toTopOf="parent">
+
             <com.zoomcar.uikit.textview.ZTextView
+                android:id="@+id/text_title"
                 style="@style/Body2Primary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Forum Centre City, Mysuru"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:id="@+id/text_title"
+                android:clickable="false"
                 android:ellipsize="end"
-                android:clickable="false"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Forum Centre City, Mysuru" />
 
             <com.zoomcar.uikit.textview.ZTextView
                 android:id="@+id/text_desc"
                 style="@style/CaptionInactive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/text_title"
+                android:clickable="false"
                 app:layout_constraintStart_toStartOf="@+id/text_title"
-                tools:text="1.8 kms away from selected destination"
-                android:clickable="false"/>
+                app:layout_constraintTop_toBottomOf="@+id/text_title"
+                tools:text="1.8 kms away from selected destination" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
         <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/ever_green_06"
-            android:lineSpacingExtra="2sp"
             android:gravity="end"
-            android:text="@string/label_edit"
+            android:lineSpacingExtra="2sp"
             android:paddingStart="12dp"
+            android:text="@string/label_edit"
+            android:textColor="@color/ever_green_06"
+            android:textSize="14sp"
+            android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:visibility="visible"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/container"
+            android:background="@drawable/elevated_thumb"
             android:padding="4dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@drawable/elevated_thumb">
+            app:layout_constraintTop_toTopOf="parent">
+
             <com.zoomcar.uikit.imageview.ZImageView
+                android:id="@+id/right_image_type"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:baselineAlignBottom="true"
-                android:id="@+id/right_image_type"
                 app:layout_constraintEnd_toStartOf="@id/text_right"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.zoomcar.uikit.textview.ZTextView
                 android:id="@+id/text_right"
@@ -82,11 +88,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingStart="2dp"
-                android:paddingEnd="4dp"
                 android:paddingTop="2dp"
+                android:paddingEnd="4dp"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="text_edit,container" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
