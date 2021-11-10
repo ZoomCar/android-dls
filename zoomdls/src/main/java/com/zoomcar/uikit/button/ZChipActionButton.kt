@@ -30,6 +30,10 @@ class ZChipActionButton : ConstraintLayout {
 
     constructor(context: Context) : super(context)
 
+    constructor(context: Context, type: ChipButtonType) : super(context) {
+        this.type = type
+    }
+
     constructor(
         context: Context,
         attrs: AttributeSet?
