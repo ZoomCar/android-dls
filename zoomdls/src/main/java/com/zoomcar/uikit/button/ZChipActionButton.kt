@@ -114,7 +114,7 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Inverse)
                     }
-                    ImageViewCompat.setImageTintList(imageIcon, bgColorState)
+                    ImageViewCompat.setImageTintList(imageIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white)))
                 }
             }
             ChipButtonType.TRANSIENT_LIGHT -> {
@@ -126,7 +126,7 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
                     }
-                    ImageViewCompat.setImageTintList(imageIcon, bgColorState)
+                    ImageViewCompat.setImageTintList(imageIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.black)))
                 }
             }
         }
