@@ -39,7 +39,7 @@ class ZChipActionButton : ConstraintLayout {
         attrs: AttributeSet?
     ) : super(context, attrs) {
         setZAttributes(attrs)
-        setStyle()
+        setStyle(type)
     }
 
     constructor(
@@ -48,7 +48,7 @@ class ZChipActionButton : ConstraintLayout {
         @AttrRes defStyleAttr: Int = 0
     ) : super(context, attrs, defStyleAttr) {
         setZAttributes(attrs)
-        setStyle()
+        setStyle(type)
     }
 
     init {
@@ -80,7 +80,7 @@ class ZChipActionButton : ConstraintLayout {
         binding.viewDotHighlight.isVisible = data.isHighlighted
     }
 
-    private fun setStyle() {
+    fun setStyle(type: ChipButtonType) {
         when (type) {
             ChipButtonType.DARK -> {
                 binding.apply {
