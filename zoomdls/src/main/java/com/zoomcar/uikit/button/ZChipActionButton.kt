@@ -40,6 +40,7 @@ class ZChipActionButton : ConstraintLayout {
         attrs: AttributeSet?
     ) : super(context, attrs) {
         setZAttributes(attrs)
+        refreshStyle()
     }
 
     constructor(
@@ -48,12 +49,12 @@ class ZChipActionButton : ConstraintLayout {
         @AttrRes defStyleAttr: Int = 0
     ) : super(context, attrs, defStyleAttr) {
         setZAttributes(attrs)
+        refreshStyle()
     }
 
     init {
         val inflater = LayoutInflater.from(context)
         binding = LayoutZButtonDarkBinding.inflate(inflater, this, true)
-        refreshStyle()
     }
 
     private fun setZAttributes(attrs: AttributeSet?) {
