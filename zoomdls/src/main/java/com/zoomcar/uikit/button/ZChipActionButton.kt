@@ -40,7 +40,6 @@ class ZChipActionButton : ConstraintLayout {
         attrs: AttributeSet?
     ) : super(context, attrs) {
         setZAttributes(attrs)
-        setStyle(type)
     }
 
     constructor(
@@ -49,12 +48,12 @@ class ZChipActionButton : ConstraintLayout {
         @AttrRes defStyleAttr: Int = 0
     ) : super(context, attrs, defStyleAttr) {
         setZAttributes(attrs)
-        setStyle(type)
     }
 
     init {
         val inflater = LayoutInflater.from(context)
         binding = LayoutZButtonDarkBinding.inflate(inflater, this, true)
+        refreshStyle()
     }
 
     private fun setZAttributes(attrs: AttributeSet?) {
@@ -81,7 +80,7 @@ class ZChipActionButton : ConstraintLayout {
         binding.viewDotHighlight.isVisible = data.isHighlighted
     }
 
-    fun setStyle(type: ChipButtonType) {
+    private fun refreshStyle() {
         when (type) {
             ChipButtonType.DARK -> {
                 binding.apply {
@@ -114,7 +113,10 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Inverse)
                     }
-                    ImageViewCompat.setImageTintList(imageIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white)))
+                    ImageViewCompat.setImageTintList(
+                        imageIcon,
+                        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))
+                    )
                 }
             }
             ChipButtonType.TRANSIENT_LIGHT -> {
@@ -126,10 +128,18 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
                     }
-                    ImageViewCompat.setImageTintList(imageIcon, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.black)))
+                    ImageViewCompat.setImageTintList(
+                        imageIcon,
+                        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.black))
+                    )
                 }
             }
         }
+    }
+
+    fun setStyle(type: ChipButtonType) {
+        this.type = type
+        refreshStyle()
     }
 
     @Parcelize
