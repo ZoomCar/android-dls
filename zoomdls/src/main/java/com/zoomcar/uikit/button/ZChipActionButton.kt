@@ -94,6 +94,9 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Inverse)
                     }
+                    rootButton.apply {
+                        strokeWidth = UiUtil.dpToPixels(0, context)
+                    }
                 }
             }
             ChipButtonType.LIGHT -> {
@@ -133,8 +136,8 @@ class ZChipActionButton : ConstraintLayout {
                         ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))
                     )
                     rootButton.apply {
-                        strokeWidth = UiUtil.dpToPixels(2, context)
-                        strokeColor = ContextCompat.getColor(context, R.color.phantom_grey_02)
+                        strokeWidth = UiUtil.dpToPixels(1, context)
+                        strokeColor = ContextCompat.getColor(context, R.color.white)
                     }
                 }
             }
