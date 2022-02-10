@@ -114,9 +114,12 @@ class ZChipActionButton : ConstraintLayout {
                             )
                         )
                     )
+                    rootButton.apply {
+                        strokeWidth = UiUtil.dpToPixels(0, context)
+                    }
                 }
             }
-            ChipButtonType.TRANSIENT_DARK -> {
+            ChipButtonType.OUTLINED -> {
                 binding.apply {
                     val bgColor = ContextCompat.getColor(context, R.color.black)
                     val bgColorState = ColorStateList.valueOf(bgColor)
@@ -131,11 +134,16 @@ class ZChipActionButton : ConstraintLayout {
                     )
                     rootButton.apply {
                         strokeWidth = UiUtil.dpToPixels(2, context)
-                        strokeColor = ContextCompat.getColor(context, R.color.phantom_grey_01)
+                        strokeColor = ContextCompat.getColor(context, R.color.phantom_grey_02)
                     }
                 }
             }
         }
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        binding.rootButton.radius = (UiUtil.dpToPixels(measuredHeight, context) / 2).toFloat()
     }
 
     fun setStyle(type: ChipButtonType) {
@@ -154,7 +162,7 @@ class ZChipActionButton : ConstraintLayout {
     enum class ChipButtonType {
         LIGHT,
         DARK,
-        TRANSIENT_DARK;
+        OUTLINED;
 
         companion object {
             fun valueOf(value: Int?) = values().firstOrNull {
