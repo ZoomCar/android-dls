@@ -24,7 +24,6 @@
             <enum name="light" value="0" />
             <enum name="dark" value="1" />
             <enum name="transient_dark" value="2" />
-            <enum name="transient_light" value="3" />
         </attr>
     </declare-styleable>
 

@@ -13,6 +13,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.ImageViewCompat
 import androidx.core.widget.TextViewCompat
+import com.zoomcar.util.UiUtil
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZButtonDarkBinding
@@ -33,6 +34,7 @@ class ZChipActionButton : ConstraintLayout {
 
     constructor(context: Context, type: ChipButtonType) : super(context) {
         this.type = type
+        refreshStyle()
     }
 
     constructor(
@@ -103,6 +105,15 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
                     }
+                    ImageViewCompat.setImageTintList(
+                        imageIcon,
+                        ColorStateList.valueOf(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.ever_green_06
+                            )
+                        )
+                    )
                 }
             }
             ChipButtonType.TRANSIENT_DARK -> {
@@ -118,21 +129,10 @@ class ZChipActionButton : ConstraintLayout {
                         imageIcon,
                         ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))
                     )
-                }
-            }
-            ChipButtonType.TRANSIENT_LIGHT -> {
-                binding.apply {
-                    val bgColor = ContextCompat.getColor(context, R.color.white)
-                    val bgColorState = ColorStateList.valueOf(bgColor)
-                    rootButton.setCardBackgroundColor(bgColorState)
-
-                    textName.apply {
-                        TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
+                    rootButton.apply {
+                        strokeWidth = UiUtil.dpToPixels(2, context)
+                        strokeColor = ContextCompat.getColor(context, R.color.phantom_grey_01)
                     }
-                    ImageViewCompat.setImageTintList(
-                        imageIcon,
-                        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.black))
-                    )
                 }
             }
         }
@@ -154,8 +154,7 @@ class ZChipActionButton : ConstraintLayout {
     enum class ChipButtonType {
         LIGHT,
         DARK,
-        TRANSIENT_DARK,
-        TRANSIENT_LIGHT;
+        TRANSIENT_DARK;
 
         companion object {
             fun valueOf(value: Int?) = values().firstOrNull {
