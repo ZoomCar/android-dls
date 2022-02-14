@@ -3,6 +3,7 @@ package com.zoomcar.uikit.button
 import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.TypedArray
+import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -29,6 +30,7 @@ import kotlinx.android.parcel.Parcelize
 class ZChipActionButton : ConstraintLayout {
     private val binding: LayoutZButtonDarkBinding
     private lateinit var type: ChipButtonType
+    private var isTransitionEnabled: Boolean = false
 
     constructor(context: Context) : super(context)
 
@@ -81,6 +83,7 @@ class ZChipActionButton : ConstraintLayout {
         }
         binding.textName.text = data.text
         binding.viewDotHighlight.isVisible = data.isHighlighted
+        isTransitionEnabled = data.enableTransition
     }
 
     private fun refreshStyle() {
@@ -154,13 +157,19 @@ class ZChipActionButton : ConstraintLayout {
         refreshStyle()
     }
 
+    fun isTransitionEnabled(): Boolean{
+        return isTransitionEnabled
+    }
+
     @Parcelize
     data class ZChipActionButtonUiModel(
         @DrawableRes val iconRes: Int? = null,
         val iconUrl: String? = null,
         val text: String? = null,
         val isHighlighted: Boolean = false,
-    ) : Parcelable
+        val enableTransition: Boolean = false
+    ) : Parcelable {
+    }
 
     enum class ChipButtonType {
         LIGHT,
