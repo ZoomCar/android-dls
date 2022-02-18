@@ -3,6 +3,7 @@ package com.zoomcar.uikit.button
 import android.content.Context
 import android.content.res.ColorStateList
 import android.content.res.TypedArray
+import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -11,7 +12,9 @@ import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
+import androidx.core.widget.ImageViewCompat
 import androidx.core.widget.TextViewCompat
+import com.zoomcar.util.UiUtil
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZButtonDarkBinding
@@ -27,11 +30,13 @@ import kotlinx.android.parcel.Parcelize
 class ZChipActionButton : ConstraintLayout {
     private val binding: LayoutZButtonDarkBinding
     private lateinit var type: ChipButtonType
+    private var isTransitionEnabled: Boolean = false
 
     constructor(context: Context) : super(context)
 
     constructor(context: Context, type: ChipButtonType) : super(context) {
         this.type = type
+        refreshStyle()
     }
 
     constructor(
@@ -39,7 +44,7 @@ class ZChipActionButton : ConstraintLayout {
         attrs: AttributeSet?
     ) : super(context, attrs) {
         setZAttributes(attrs)
-        setStyle()
+        refreshStyle()
     }
 
     constructor(
@@ -48,7 +53,7 @@ class ZChipActionButton : ConstraintLayout {
         @AttrRes defStyleAttr: Int = 0
     ) : super(context, attrs, defStyleAttr) {
         setZAttributes(attrs)
-        setStyle()
+        refreshStyle()
     }
 
     init {
@@ -78,9 +83,10 @@ class ZChipActionButton : ConstraintLayout {
         }
         binding.textName.text = data.text
         binding.viewDotHighlight.isVisible = data.isHighlighted
+        isTransitionEnabled = data.enableTransition
     }
 
-    private fun setStyle() {
+    private fun refreshStyle() {
         when (type) {
             ChipButtonType.DARK -> {
                 binding.apply {
@@ -90,6 +96,9 @@ class ZChipActionButton : ConstraintLayout {
 
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Inverse)
+                    }
+                    rootButton.apply {
+                        strokeWidth = UiUtil.dpToPixels(0, context)
                     }
                 }
             }
@@ -102,9 +111,54 @@ class ZChipActionButton : ConstraintLayout {
                     textName.apply {
                         TextViewCompat.setTextAppearance(this, R.style.Button2Primary)
                     }
+                    ImageViewCompat.setImageTintList(
+                        imageIcon,
+                        ColorStateList.valueOf(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.ever_green_06
+                            )
+                        )
+                    )
+                    rootButton.apply {
+                        strokeWidth = UiUtil.dpToPixels(0, context)
+                    }
+                }
+            }
+            ChipButtonType.OUTLINED -> {
+                binding.apply {
+                    val bgColor = ContextCompat.getColor(context, R.color.black)
+                    val bgColorState = ColorStateList.valueOf(bgColor)
+                    rootButton.setCardBackgroundColor(bgColorState)
+
+                    textName.apply {
+                        TextViewCompat.setTextAppearance(this, R.style.Button2Inverse)
+                    }
+                    ImageViewCompat.setImageTintList(
+                        imageIcon,
+                        ColorStateList.valueOf(ContextCompat.getColor(context, R.color.white))
+                    )
+                    rootButton.apply {
+                        strokeWidth = UiUtil.dpToPixels(1, context)
+                        strokeColor = ContextCompat.getColor(context, R.color.white)
+                    }
                 }
             }
         }
+    }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        binding.rootButton.radius = (UiUtil.dpToPixels(measuredHeight, context) / 2).toFloat()
+    }
+
+    fun setStyle(type: ChipButtonType) {
+        this.type = type
+        refreshStyle()
+    }
+
+    fun isTransitionEnabled(): Boolean{
+        return isTransitionEnabled
     }
 
     @Parcelize
@@ -113,11 +167,14 @@ class ZChipActionButton : ConstraintLayout {
         val iconUrl: String? = null,
         val text: String? = null,
         val isHighlighted: Boolean = false,
-    ) : Parcelable
+        val enableTransition: Boolean = false
+    ) : Parcelable {
+    }
 
     enum class ChipButtonType {
         LIGHT,
-        DARK;
+        DARK,
+        OUTLINED;
 
         companion object {
             fun valueOf(value: Int?) = values().firstOrNull {

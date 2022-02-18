@@ -8,7 +8,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/phantom_grey_10"
-        app:cardCornerRadius="16dp"
         app:cardElevation="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -25,7 +24,8 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_pickup_circle"/>
 
             <com.zoomcar.uikit.textview.ZTextView
                 android:id="@+id/text_name"

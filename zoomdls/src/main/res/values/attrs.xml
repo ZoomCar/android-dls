@@ -23,6 +23,7 @@
         <attr name="type" format="enum">
             <enum name="light" value="0" />
             <enum name="dark" value="1" />
+            <enum name="outlined" value="2" />
         </attr>
     </declare-styleable>
 
