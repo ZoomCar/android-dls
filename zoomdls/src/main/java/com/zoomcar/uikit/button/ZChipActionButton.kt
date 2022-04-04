@@ -147,15 +147,6 @@ class ZChipActionButton : ConstraintLayout {
         }
     }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
-        if (android.os.Build.VERSION.SDK_INT <= android.os.Build.VERSION_CODES.O_MR1) {
-            binding.rootButton.radius = 50.toFloat()
-        }else{
-            binding.rootButton.radius = (UiUtil.dpToPixels(measuredHeight, context) / 2).toFloat()
-        }
-    }
-
     fun setStyle(type: ChipButtonType) {
         this.type = type
         refreshStyle()
