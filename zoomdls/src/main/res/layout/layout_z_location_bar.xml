@@ -6,6 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusableInTouchMode="true"
         android:background="@drawable/z_background_white_grey_border_corner_radius_4dp">
 
         <com.zoomcar.uikit.imageview.ZImageView
