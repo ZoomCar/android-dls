@@ -13,7 +13,7 @@ import com.zoomcar.zoomdls.R
 class ImageSegmentedControlItemDecorator(context: Context) : RecyclerView.ItemDecoration() {
     private val divider: Drawable? = ContextCompat.getDrawable(context, R.drawable.horizontal_divider_line)
     private val dividerMargin = UiUtil.dpToPixels(
-            context.resources.getDimensionPixelSize(R.dimen.segmented_control_divider_margin),
+            context.resources.getDimensionPixelSize(R.dimen.segmented_control_selected_button_elevation),
             context)
 
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {

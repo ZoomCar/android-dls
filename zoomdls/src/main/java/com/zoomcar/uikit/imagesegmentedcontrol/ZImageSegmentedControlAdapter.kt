@@ -97,14 +97,16 @@ class ZImageSegmentedControlAdapter(
                                 context.resources.getDimensionPixelSize(R.dimen.segmented_control_selected_button_elevation),
                                 context
                         ).toFloat()
+                        binding.iconView.drawable.setTint(ContextCompat.getColor(context, R.color.ever_green_06))
                     }
-//                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.transparent))
+                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.phantom_grey_01))
                     strokeWidth = UiUtil.dpToPixels(
                         1,
                         context
                     )
-                    strokeColor = ContextCompat.getColor(context, R.color.ever_green_05)
+                    strokeColor = ContextCompat.getColor(context, R.color.ever_green_06)
                 }
+                binding.textName.setTextColor(ContextCompat.getColor(context, R.color.ever_green_06))
             } else {
                 binding.cardBg.apply {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -112,14 +114,16 @@ class ZImageSegmentedControlAdapter(
                                 context.resources.getDimensionPixelSize(R.dimen.segmented_control_unselected_button_elevation),
                                 context
                         ).toFloat()
+                        binding.iconView.drawable.setTint(ContextCompat.getColor(context, R.color.phantom_grey_08))
                     }
-//                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.transparent))
+                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.transparent))
                     strokeWidth = UiUtil.dpToPixels(
                         0,
                         context
                     )
                     strokeColor = ContextCompat.getColor(context, R.color.transparent)
                 }
+                binding.textName.setTextColor(ContextCompat.getColor(context, R.color.phantom_grey_10))
             }
         }
 

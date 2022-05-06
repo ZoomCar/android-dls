@@ -6,11 +6,13 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.annotation.AttrRes
+import androidx.annotation.DrawableRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
 import com.zoomcar.util.getNullCheck
+import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZDisclaimerBinding
 import kotlinx.android.parcel.Parcelize
@@ -86,14 +88,19 @@ class ZDisclaimerView : ConstraintLayout {
             isVisible = data.disclaimer.getNullCheck()
             text = data.disclaimer
         }
+        binding.imageDisclaimer.apply{
+            isVisible = data.disclaimerImage.getNullCheck()
+            loadImage(data.disclaimerImage)
+        }
     }
 
     @Parcelize
     data class ZDisclaimerUiModel(
-            var disclaimerTitle: String? = null,
-            var disclaimer: String? = null,
-            var disclaimerType: DisclaimerType? = DisclaimerType.INFO
-    ) : Parcelable {
+        var disclaimerTitle: String? = null,
+        var disclaimer: String? = null,
+        var disclaimerType: DisclaimerType? = DisclaimerType.INFO,
+        var disclaimerImage: String? = null,
+        ) : Parcelable {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false
