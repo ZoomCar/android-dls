@@ -2,30 +2,31 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root_segmented_control"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/root_segmented_control"
         android:background="@color/white">
+
         <com.zoomcar.uikit.textview.ZTextView
+            android:id="@+id/text_header"
             style="@style/Button2Primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Free KMs"
-            app:layout_constraintTop_toTopOf="parent"
+            android:paddingEnd="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:id="@+id/text_header"
-            android:paddingEnd="4dp"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Free KMs" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/segmented_control"
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="wrap_content"
             android:clipToPadding="false"
-            android:background="@drawable/segmented_control_layout_bg"
-            app:layout_constraintStart_toEndOf="@+id/text_header"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintStart_toEndOf="@+id/text_header"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
