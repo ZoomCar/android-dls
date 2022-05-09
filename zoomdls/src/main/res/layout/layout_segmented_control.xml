@@ -23,7 +23,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/segmented_control"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:clipToPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_header"

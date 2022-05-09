@@ -1,11 +1,9 @@
 package com.zoomcar.uikit.segmentedcontrol
 
 import android.content.Context
-import android.os.Parcel
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import androidx.annotation.DimenRes
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -88,9 +86,11 @@ class ZSegmentedControl : ConstraintLayout,
 
         when (item.type) {
             SegmentControlType.DEFAULT -> {
-                setPadding(4, 4, 4, 4)
-                background =
-                    ContextCompat.getDrawable(context, R.drawable.segmented_control_layout_bg)
+                binding.segmentedControl.apply {
+                    setPadding(4, 4, 4, 4)
+                    background =
+                        ContextCompat.getDrawable(context, R.drawable.segmented_control_layout_bg)
+                }
             }
             SegmentControlType.WITH_IMAGE -> {
                 binding.segmentedControl.apply {
