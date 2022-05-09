@@ -2,6 +2,7 @@ package com.zoomcar.uikit.disclaimer
 
 import android.content.Context
 import android.content.res.TypedArray
+import android.os.Build
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -29,16 +30,17 @@ class ZDisclaimerView : ConstraintLayout {
 
     constructor(context: Context) : super(context)
 
-    constructor(context: Context,
-                attrs: AttributeSet?
+    constructor(
+        context: Context,
+        attrs: AttributeSet?
     ) : super(context, attrs) {
         setZAttributes(attrs)
     }
 
     constructor(
-            context: Context,
-            attrs: AttributeSet,
-            @AttrRes defStyleAttr: Int = 0
+        context: Context,
+        attrs: AttributeSet,
+        @AttrRes defStyleAttr: Int = 0
     ) : super(context, attrs, defStyleAttr) {
         setZAttributes(attrs)
     }
@@ -50,34 +52,70 @@ class ZDisclaimerView : ConstraintLayout {
 
     private fun setZAttributes(attrs: AttributeSet?) {
         attrs?.let {
-            val a: TypedArray = context.obtainStyledAttributes(attrs,
-                    R.styleable.ZDisclaimerView, 0, 0)
+            val a: TypedArray = context.obtainStyledAttributes(
+                attrs,
+                R.styleable.ZDisclaimerView, 0, 0
+            )
 
-            disclaimerType = DisclaimerType.fromValue(a.getInt(R.styleable.ZDisclaimerView_disclaimer_type, 0))
+            disclaimerType =
+                DisclaimerType.fromValue(a.getInt(R.styleable.ZDisclaimerView_disclaimer_type, 0))
         }
     }
 
     fun setData(data: ZDisclaimerUiModel) {
         when (data.disclaimerType) {
             DisclaimerType.INFO -> {
-                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.CaptionTintedMidnightBlue)
-                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedMidnightBlue)
-                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_midnightblue01_corner_radius_4dp)
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimierTitle,
+                    R.style.CaptionTintedMidnightBlue
+                )
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimer,
+                    R.style.CaptionTintedMidnightBlue
+                )
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.background_midnightblue01_corner_radius_4dp
+                )
             }
             DisclaimerType.DEBUG -> {
-                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.OverlineSecondary)
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimierTitle,
+                    R.style.OverlineSecondary
+                )
                 TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionPrimary)
-                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_zoom_grey_corner_radius_4dp)
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.background_zoom_grey_corner_radius_4dp
+                )
             }
             DisclaimerType.WARNING -> {
-                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.CaptionTintedSunriseYellow)
-                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedSunriseYellow)
-                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_sunrise_yellow_corner_radius_4dp)
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimierTitle,
+                    R.style.CaptionTintedSunriseYellow
+                )
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimer,
+                    R.style.CaptionTintedSunriseYellow
+                )
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.background_sunrise_yellow_corner_radius_4dp
+                )
             }
             DisclaimerType.ERROR -> {
-                TextViewCompat.setTextAppearance(binding.textDisclaimierTitle, R.style.CaptionTintedFireRed)
-                TextViewCompat.setTextAppearance(binding.textDisclaimer, R.style.CaptionTintedFireRed)
-                binding.disclaimerContainer.background = ContextCompat.getDrawable(context, R.drawable.background_fire_red_corner_radius_4dp)
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimierTitle,
+                    R.style.CaptionTintedFireRed
+                )
+                TextViewCompat.setTextAppearance(
+                    binding.textDisclaimer,
+                    R.style.CaptionTintedFireRed
+                )
+                binding.disclaimerContainer.background = ContextCompat.getDrawable(
+                    context,
+                    R.drawable.background_fire_red_corner_radius_4dp
+                )
             }
         }
         binding.textDisclaimierTitle.apply {
@@ -88,9 +126,26 @@ class ZDisclaimerView : ConstraintLayout {
             isVisible = data.disclaimer.getNullCheck()
             text = data.disclaimer
         }
-        binding.imageDisclaimer.apply{
+        binding.imageDisclaimer.apply {
             isVisible = data.disclaimerImage.getNullCheck()
-            loadImage(data.disclaimerImage)
+            data.disclaimerImage?.let { setImageResource(it) }
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                data.disclaimerType?.let { type -> getColorFromType(type) }?.let { color ->
+                    ContextCompat.getColor(
+                        context,
+                        color
+                    )
+                }?.let { binding.imageDisclaimer.drawable.setTint(it) }
+            }
+        }
+    }
+
+    private fun getColorFromType(type: DisclaimerType): Int {
+        return when (type) {
+            DisclaimerType.INFO -> R.color.midnight_blue_06
+            DisclaimerType.WARNING -> R.color.sunrise_yellow_06
+            DisclaimerType.ERROR -> R.color.fire_red_06
+            else -> R.color.phantom_grey_10
         }
     }
 
@@ -99,8 +154,8 @@ class ZDisclaimerView : ConstraintLayout {
         var disclaimerTitle: String? = null,
         var disclaimer: String? = null,
         var disclaimerType: DisclaimerType? = DisclaimerType.INFO,
-        var disclaimerImage: String? = null,
-        ) : Parcelable {
+        var disclaimerImage: Int? = null,
+    ) : Parcelable {
         override fun equals(other: Any?): Boolean {
             if (this === other) return true
             if (javaClass != other?.javaClass) return false

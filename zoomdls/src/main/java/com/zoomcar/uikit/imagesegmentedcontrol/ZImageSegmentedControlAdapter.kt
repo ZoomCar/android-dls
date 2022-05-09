@@ -99,7 +99,7 @@ class ZImageSegmentedControlAdapter(
                         ).toFloat()
                         binding.iconView.drawable.setTint(ContextCompat.getColor(context, R.color.ever_green_06))
                     }
-                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.phantom_grey_01))
+                    setCardBackgroundColor(ContextCompat.getColor(context, R.color.white))
                     strokeWidth = UiUtil.dpToPixels(
                         1,
                         context
