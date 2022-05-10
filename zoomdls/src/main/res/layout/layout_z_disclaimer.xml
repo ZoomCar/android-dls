@@ -4,20 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/disclaimer_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/background_midnightblue01_corner_radius_4dp"
-        android:paddingStart="16dp"
         android:paddingTop="12dp"
         android:paddingEnd="16dp"
-        android:paddingBottom="12dp"
-        android:id="@+id/disclaimer_container">
+        android:paddingBottom="12dp">
+
+        <com.zoomcar.uikit.imageview.ZImageView
+            android:id="@+id/image_disclaimer"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/fire_red_06_circular_bg" />
 
         <com.zoomcar.uikit.textview.ZTextView
             android:id="@+id/text_disclaimier_title"
             style="@style/OverlineSecondary"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@+id/image_disclaimer"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Home" />
 
@@ -26,8 +36,9 @@
             style="@style/CaptionTintedMidnightBlue"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_disclaimer"
             app:layout_constraintTop_toBottomOf="@+id/text_disclaimier_title"
             tools:text="Exact car location will be shared post booking" />
     </androidx.constraintlayout.widget.ConstraintLayout>

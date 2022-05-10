@@ -14,21 +14,44 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardBackgroundColor="@color/ever_green_06"
-            android:layout_margin="4dp"
-            app:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <com.zoomcar.uikit.textview.ZTextView
-                android:id="@+id/text_name"
-                style="@style/Button2Primary"
-                android:clickable="false"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:gravity="center_horizontal"
-                android:lineSpacingExtra="2sp"
-                android:textColor="@color/phantom_grey_10"
-                android:textSize="14sp"
-                tools:text="710" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <com.zoomcar.uikit.imageview.ZImageView
+                    android:id="@+id/icon_view"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:clickable="false"
+                    app:layout_constraintBottom_toTopOf="@+id/text_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:src="@drawable/ic_pickup_circle" />
+
+                <com.zoomcar.uikit.textview.ZTextView
+                    android:id="@+id/text_name"
+                    style="@style/Button2Primary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:clickable="false"
+                    android:gravity="center_horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/icon_view"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    tools:text="710" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </com.zoomcar.uikit.materialcardview.ZMaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
