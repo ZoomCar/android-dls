@@ -5,14 +5,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:clipToPadding="false">
 
         <com.zoomcar.uikit.materialcardview.ZMaterialCardView
             android:id="@+id/card_bg"
             style="@style/Button2Primary"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             app:cardBackgroundColor="@color/ever_green_06"
             app:cardCornerRadius="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -20,7 +20,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp">
 

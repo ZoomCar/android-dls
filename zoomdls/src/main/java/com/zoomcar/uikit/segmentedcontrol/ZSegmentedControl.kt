@@ -1,6 +1,7 @@
 package com.zoomcar.uikit.segmentedcontrol
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -85,7 +86,7 @@ class ZSegmentedControl : ConstraintLayout,
         }
 
         when (item.type) {
-            SegmentControlType.DEFAULT -> {
+            SegmentControlType.LABEL -> {
                 binding.segmentedControl.apply {
                     setPadding(4, 4, 4, 4)
                     background =
@@ -93,7 +94,7 @@ class ZSegmentedControl : ConstraintLayout,
                 }
                 layoutParams.height = UiUtil.dpToPixels(44, context)
             }
-            SegmentControlType.WITH_IMAGE -> {
+            SegmentControlType.ICON_LABEL -> {
                 binding.segmentedControl.apply {
                     setPadding(0, 0, 0, 0)
                     background = ContextCompat.getDrawable(
@@ -125,23 +126,37 @@ class ZSegmentedControl : ConstraintLayout,
     private fun calculateCellSize() {
         val width = if (binding.textHeader.isVisible) binding.textHeader.measuredWidth else 0
         val recyclerSize = parentWidth - width
-        var itemCellSize = 0
-        when (model?.type) {
-            SegmentControlType.DEFAULT -> {
-                itemCellSize =
-                    ((recyclerSize - 2 * UiUtil.dpToPixels(4, context)) / (model?.list?.size
-                        ?: 1).toFloat()).toInt()
+        val itemCellSize = when (model?.type) {
+            SegmentControlType.LABEL -> {
+                ((recyclerSize - UiUtil.dpToPixels(4, context)) / (model?.list?.size
+                    ?: 1).toFloat()).toInt()
             }
-            SegmentControlType.WITH_IMAGE -> {
-                itemCellSize = (recyclerSize / (model?.list?.size ?: 1).toFloat()).toInt()
+            else -> {
+                (recyclerSize / (model?.list?.size ?: 1).toFloat()).toInt()
             }
         }
         segmentAdapter.setCellSize(itemCellSize)
     }
 
+    private fun getBackgroundStyleBasedOnPosition(
+        position: Int
+    ): Drawable? {
+        return when (position) {
+            0 -> ContextCompat.getDrawable(
+                context,
+                R.drawable.background_segmented_control_card_left_radius_2_7
+            )
+            model?.list?.size?.minus(1) -> ContextCompat.getDrawable(
+                context,
+                R.drawable.background_segmented_control_card_right_radius_2_7
+            )
+            else -> null
+        }
+    }
+
     @Parcelize
     data class ZSegmentedControlUIModel(
-        val type: SegmentControlType = SegmentControlType.DEFAULT,
+        val type: SegmentControlType = SegmentControlType.LABEL,
         val id: String,
         val header: String,
         val list: List<ZSegmentedControlAdapter.ZSegmentedControlButtonModel>
@@ -152,13 +167,14 @@ class ZSegmentedControl : ConstraintLayout,
     }
 
     override fun onSegmentButtonClick(position: Int) {
+        binding.segmentedControl.background = getBackgroundStyleBasedOnPosition(position)
         model?.let { data ->
             listener?.onSegmentSelected(data.id, data.list[position].id)
         }
     }
 
     enum class SegmentControlType {
-        DEFAULT,
-        WITH_IMAGE;
+        LABEL,
+        ICON_LABEL;
     }
 }

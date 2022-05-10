@@ -3,7 +3,6 @@ package com.zoomcar.uikit.segmentedcontrol
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Build
-import android.os.Parcel
 import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +26,7 @@ class ZSegmentedControlAdapter(
     private var data: List<ZSegmentedControlButtonModel>? = null
     private var selectedPosition = -1
     private var cellSize = 0
-    private var segmentControlType = ZSegmentedControl.SegmentControlType.DEFAULT
+    private var segmentControlType = ZSegmentedControl.SegmentControlType.LABEL
 
     private val adapterlistener: ISegmentAdapterListener = object : ISegmentAdapterListener {
         override fun getCellSize(): Int {
@@ -90,7 +89,7 @@ class ZSegmentedControlAdapter(
             binding.textName.text = model.name
 
             when (segmentControlType) {
-                ZSegmentedControl.SegmentControlType.DEFAULT -> {
+                ZSegmentedControl.SegmentControlType.LABEL -> {
                     val param = binding.cardBg.layoutParams as ViewGroup.MarginLayoutParams
                     param.setMargins(4, 4, 4, 4)
                     binding.cardBg.apply {
@@ -143,7 +142,7 @@ class ZSegmentedControlAdapter(
                     }
                 }
 
-                ZSegmentedControl.SegmentControlType.WITH_IMAGE -> {
+                ZSegmentedControl.SegmentControlType.ICON_LABEL -> {
                     //Remove layout margin
                     val param = binding.cardBg.layoutParams as ViewGroup.MarginLayoutParams
                     param.setMargins(0, 0, 0, 0)
@@ -248,7 +247,6 @@ class ZSegmentedControlAdapter(
                 )
                 else -> null
             }
-
         }
 
         override fun isSelected(): Boolean {
