@@ -208,12 +208,13 @@ class ZSegmentedControlAdapter(
                                     )
                                 )
                             }
-                            setCardBackgroundColor(
-                                ContextCompat.getColor(
+                            background = bindingAdapter?.itemCount?.let { count ->
+                                getBackgroundStyleBasedOnPosition(
                                     context,
-                                    R.color.transparent
+                                    bindingAdapterPosition,
+                                    count
                                 )
-                            )
+                            }
                             strokeWidth = UiUtil.dpToPixels(
                                 0,
                                 context

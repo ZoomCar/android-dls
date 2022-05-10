@@ -91,6 +91,7 @@ class ZSegmentedControl : ConstraintLayout,
                     background =
                         ContextCompat.getDrawable(context, R.drawable.segmented_control_layout_bg)
                 }
+                layoutParams.height = UiUtil.dpToPixels(44, context)
             }
             SegmentControlType.WITH_IMAGE -> {
                 binding.segmentedControl.apply {
@@ -99,6 +100,7 @@ class ZSegmentedControl : ConstraintLayout,
                         context,
                         R.drawable.segmented_control_layout_bg_radius_2_7
                     )
+                    layoutParams.height = UiUtil.dpToPixels(48, context)
                 }
             }
         }
@@ -123,8 +125,17 @@ class ZSegmentedControl : ConstraintLayout,
     private fun calculateCellSize() {
         val width = if (binding.textHeader.isVisible) binding.textHeader.measuredWidth else 0
         val recyclerSize = parentWidth - width
-        val itemCellSize = ((recyclerSize - 2 * UiUtil.dpToPixels(4, context)) / (model?.list?.size
-            ?: 1).toFloat()).toInt()
+        var itemCellSize = 0
+        when (model?.type) {
+            SegmentControlType.DEFAULT -> {
+                itemCellSize =
+                    ((recyclerSize - 2 * UiUtil.dpToPixels(4, context)) / (model?.list?.size
+                        ?: 1).toFloat()).toInt()
+            }
+            SegmentControlType.WITH_IMAGE -> {
+                itemCellSize = (recyclerSize / (model?.list?.size ?: 1).toFloat()).toInt()
+            }
+        }
         segmentAdapter.setCellSize(itemCellSize)
     }
 
