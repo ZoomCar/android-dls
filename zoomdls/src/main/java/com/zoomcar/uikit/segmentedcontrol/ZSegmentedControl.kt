@@ -108,6 +108,7 @@ class ZSegmentedControl : ConstraintLayout,
         model?.list?.let {
             segmentAdapter.setData(it, item.type)
         }
+        calculateCellSize()
     }
 
     fun setZSegmentedControlClickListener(listener: IZSegmentedControlListener) {
