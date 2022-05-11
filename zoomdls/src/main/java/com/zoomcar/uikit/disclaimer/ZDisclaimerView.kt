@@ -110,15 +110,18 @@ class ZDisclaimerView : ConstraintLayout {
         }
         binding.imageDisclaimer.apply {
             isVisible = data.disclaimerImage.getNullCheck()
-            data.disclaimerImage?.let { setImageResource(it) }
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                data.disclaimerType?.let { type -> getColorFromType(type) }?.let { color ->
-                    ContextCompat.getColor(
-                        context,
-                        color
-                    )
-                }?.let { binding.imageDisclaimer.drawable.setTint(it) }
+            data.disclaimerImage?.let { image ->
+                setImageResource(image)
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    data.disclaimerType?.let { type -> getColorFromType(type) }?.let { color ->
+                        ContextCompat.getColor(
+                            context,
+                            color
+                        )
+                    }?.let { binding.imageDisclaimer.drawable.setTint(it) }
+                }
             }
+
         }
     }
 

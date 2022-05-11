@@ -90,6 +90,9 @@ class ZSegmentedControlAdapter(
 
             when (segmentControlType) {
                 ZSegmentedControl.SegmentControlType.LABEL -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        binding.textName.setTextAppearance(R.style.Button2Primary)
+                    }
                     val param = binding.cardBg.layoutParams as ViewGroup.MarginLayoutParams
                     param.setMargins(4, 4, 4, 4)
                     binding.cardBg.apply {
@@ -143,6 +146,9 @@ class ZSegmentedControlAdapter(
                 }
 
                 ZSegmentedControl.SegmentControlType.ICON_LABEL -> {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        binding.textName.setTextAppearance(R.style.CaptionPrimary)
+                    }
                     //Remove layout margin
                     val param = binding.cardBg.layoutParams as ViewGroup.MarginLayoutParams
                     param.setMargins(0, 0, 0, 0)
@@ -181,6 +187,12 @@ class ZSegmentedControlAdapter(
                                     count
                                 )
                             }
+                            setBackgroundColor(
+                                ContextCompat.getColor(
+                                    context,
+                                    R.color.white
+                                )
+                            )
                             strokeWidth = UiUtil.dpToPixels(
                                 1,
                                 context
@@ -214,6 +226,12 @@ class ZSegmentedControlAdapter(
                                     count
                                 )
                             }
+                            setBackgroundColor(
+                                ContextCompat.getColor(
+                                    context,
+                                    R.color.transparent
+                                )
+                            )
                             strokeWidth = UiUtil.dpToPixels(
                                 0,
                                 context
