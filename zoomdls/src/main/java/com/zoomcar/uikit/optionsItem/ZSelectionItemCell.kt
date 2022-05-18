@@ -15,7 +15,7 @@ import com.zoomcar.util.isValid
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSelectionItemBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class ZSelectionItemCell : ConstraintLayout, View.OnClickListener {
     private val binding: LayoutSelectionItemBinding

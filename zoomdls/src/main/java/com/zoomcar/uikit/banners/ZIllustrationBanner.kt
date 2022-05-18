@@ -11,7 +11,7 @@ import com.zoomcar.util.getNullCheck
 import com.zoomcar.util.isValid
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.databinding.LayoutIllustrationBannerBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @created 21/10/2020 - 11:24 AM

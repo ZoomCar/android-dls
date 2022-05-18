@@ -12,7 +12,7 @@ import com.zoomcar.util.getNullCheck
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZDisclaimerBinding
 import com.zoomcar.zoomdls.databinding.LayoutZTransactionHeaderItemBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @created 20/01/2021 - 4:12 PM
