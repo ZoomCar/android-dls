@@ -16,7 +16,7 @@ import com.zoomcar.util.getNullCheck
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZDisclaimerBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @created 20/09/2020 - 7:24 PM

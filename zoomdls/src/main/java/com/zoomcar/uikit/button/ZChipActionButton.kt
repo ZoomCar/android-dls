@@ -18,7 +18,7 @@ import com.zoomcar.util.UiUtil
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZButtonDarkBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @created 02/03/2021 - 10:30 AM

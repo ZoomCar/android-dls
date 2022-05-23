@@ -11,7 +11,7 @@ import androidx.annotation.AttrRes
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import com.zoomcar.zoomdls.databinding.LayoutZLocationBarBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /*
   * @created 22/03/2021 - 2:12 PM

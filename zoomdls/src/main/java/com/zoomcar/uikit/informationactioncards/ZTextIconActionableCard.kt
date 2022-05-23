@@ -13,7 +13,7 @@ import com.zoomcar.util.isValid
 import com.zoomcar.util.loadImage
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutTextIconActionableCardBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @created 13/09/2020 - 2:40 PM

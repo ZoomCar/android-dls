@@ -14,7 +14,7 @@ import com.zoomcar.util.getNullCheck
 import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZFlowTextSelectionBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class ZFlowTextSelectionLayout : ConstraintLayout, ZSelectionTextView.IZSelectionTextView {
     private var binding: LayoutZFlowTextSelectionBinding

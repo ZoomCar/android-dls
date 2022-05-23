@@ -12,7 +12,7 @@ import androidx.core.view.isVisible
 import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutZRectangularSelectionItemBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /**
  * @created 14/02/2021 - 10:44 PM

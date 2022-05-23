@@ -9,7 +9,7 @@ import androidx.annotation.AttrRes
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.zoomcar.zoomdls.R
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class ZSelectionTextView : AppCompatTextView, View.OnClickListener {
     private var isZsTvSelected = false
