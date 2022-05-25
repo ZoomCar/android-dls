@@ -11,7 +11,7 @@ import com.zoomcar.uikit.disclaimer.ZDisclaimerView
 import com.zoomcar.util.UiUtil
 import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 /*
   * @created 23/06/2021 - 6:56 AM

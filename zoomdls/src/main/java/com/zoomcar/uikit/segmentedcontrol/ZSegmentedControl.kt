@@ -16,7 +16,7 @@ import com.zoomcar.util.UiUtil
 import com.zoomcar.util.isValid
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSegmentedControlBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class ZSegmentedControl : ConstraintLayout,
     ZSegmentedControlAdapter.IZSegmentedButtonClickListener {
@@ -91,8 +91,8 @@ class ZSegmentedControl : ConstraintLayout,
                     setPadding(4, 4, 4, 4)
                     background =
                         ContextCompat.getDrawable(context, R.drawable.segmented_control_layout_bg)
+                    layoutParams.height = UiUtil.dpToPixels(44, context)
                 }
-                layoutParams.height = UiUtil.dpToPixels(44, context)
             }
             SegmentControlType.ICON_LABEL -> {
                 binding.segmentedControl.apply {

@@ -18,7 +18,7 @@ import com.zoomcar.util.UiUtil
 import com.zoomcar.util.getNullCheck
 import com.zoomcar.zoomdls.R
 import com.zoomcar.zoomdls.databinding.LayoutSegmentedButtonBinding
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class ZSegmentedControlAdapter(
     private val segmentedClickListener: IZSegmentedButtonClickListener
