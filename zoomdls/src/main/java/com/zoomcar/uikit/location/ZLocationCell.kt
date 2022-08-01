@@ -1,6 +1,8 @@
 package com.zoomcar.uikit.location
 
 import android.content.Context
+import android.os.Handler
+import android.os.Looper
 import android.os.Parcelable
 import android.text.Editable
 import android.text.TextWatcher
@@ -23,6 +25,7 @@ class ZLocationCell : ConstraintLayout {
 
     private lateinit var binding: LayoutZLocationBarBinding
     private var listener: IZLocationBarListener? = null
+    private var debounceHandler = Handler(Looper.getMainLooper())
 
     private val locationChangeListener = object : TextWatcher {
         override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -33,9 +36,19 @@ class ZLocationCell : ConstraintLayout {
 
         override fun afterTextChanged(s: Editable?) {
             if (binding.textPickupLocation.hasFocus()) {
-                listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.PICKUP)
+                listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.PICKUP, false)
+                debounceHandler.removeCallbacksAndMessages(null)
+                debounceHandler.postDelayed({
+                    listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.PICKUP, true)
+                },
+                        1000)
             } else if (binding.textDropOffLocation.hasFocus()) {
-                listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.DROP_OFF)
+                listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.DROP_OFF, false)
+                debounceHandler.removeCallbacksAndMessages(null)
+                debounceHandler.postDelayed({
+                    listener?.onLocationSearchTextChanged(s.toString(), LocationSearchFlowType.DROP_OFF, true)
+                },
+                        1000)
             }
         }
 
@@ -114,7 +127,7 @@ class ZLocationCell : ConstraintLayout {
     }
 
     fun selectLocationFlow(flow: LocationSearchFlowType) {
-        if(flow == LocationSearchFlowType.PICKUP)
+        if (flow == LocationSearchFlowType.PICKUP)
             binding.textPickupLocation.performClick()
         else
             binding.textDropOffLocation.performClick()
@@ -149,6 +162,6 @@ class ZLocationCell : ConstraintLayout {
     interface IZLocationBarListener {
         fun onPickupLocationClicked()
         fun onDropOffLocationClicked()
-        fun onLocationSearchTextChanged(text: String, type: LocationSearchFlowType)
+        fun onLocationSearchTextChanged(text: String, type: LocationSearchFlowType, autoSearch: Boolean)
     }
 }
