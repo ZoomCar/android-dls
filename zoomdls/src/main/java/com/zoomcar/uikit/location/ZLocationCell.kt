@@ -162,6 +162,6 @@ class ZLocationCell : ConstraintLayout {
     interface IZLocationBarListener {
         fun onPickupLocationClicked()
         fun onDropOffLocationClicked()
-        fun onLocationSearchTextChanged(text: String, type: LocationSearchFlowType, autoSearch: Boolean)
+        fun onLocationSearchTextChanged(text: String, type: LocationSearchFlowType, timerExpired: Boolean)
     }
 }
