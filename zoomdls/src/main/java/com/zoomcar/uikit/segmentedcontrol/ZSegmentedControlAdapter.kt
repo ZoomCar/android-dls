@@ -297,25 +297,26 @@ class ZSegmentedControlAdapter(
     }
 
     override fun onRadioButtonClicked(position: Int) {
-        if (selectedPosition != position) {
-            val prevPos = selectedPosition
-            onSelectPosition(position)
+        if(position != -1){
+            if (selectedPosition != position) {
+                val prevPos = selectedPosition
+                onSelectPosition(position)
 
-            if (prevPos != -1) {
-                val prevSelectedButton = data?.get(prevPos)
-                prevSelectedButton?.let {
-                    it.isSelected = false
+                if(prevPos != -1) {
+                    val prevSelectedButton = data?.get(prevPos)
+                    prevSelectedButton?.let {
+                        it.isSelected = false
+                    }
+                    notifyItemChanged(prevPos)
                 }
-                notifyItemChanged(prevPos)
 
+                val currentSelectedButton = data?.get(selectedPosition)
+                currentSelectedButton?.let {
+                    it.isSelected = true
+                    segmentedClickListener.onSegmentButtonClick(selectedPosition)
+                }
+                notifyItemChanged(selectedPosition)
             }
-
-            val currentSelectedButton = data?.get(selectedPosition)
-            currentSelectedButton?.let {
-                it.isSelected = true
-                segmentedClickListener.onSegmentButtonClick(selectedPosition)
-            }
-            notifyItemChanged(selectedPosition)
         }
     }
 

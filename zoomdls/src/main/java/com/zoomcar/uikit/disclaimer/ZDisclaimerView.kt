@@ -99,6 +99,7 @@ class ZDisclaimerView : ConstraintLayout {
                     R.drawable.background_evergreen_corner_radius_4dp
                 )
             }
+            else -> {}
         }
         binding.textDisclaimierTitle.apply {
             isVisible = data.disclaimerTitle.getNullCheck()
