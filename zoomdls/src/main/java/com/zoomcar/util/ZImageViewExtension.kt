@@ -13,7 +13,7 @@ import com.zoomcar.uikit.imageview.ZImageView
 fun ZImageView.loadImage(imageUrl: String?) {
     if (imageUrl.isValid()) {
         Picasso.get()
-                .load(imageUrl)
-                .into(this)
+               .load(imageUrl)
+               .into(this)
     }
 }
